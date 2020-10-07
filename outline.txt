@@ -1,0 +1,13 @@
+Towards a Computational Model of a Feeling of Knowing
+
+knowledge search frameworks
+
+    information foraging theory
+
+related work
+
+    Sharma2016ControllingSearchIn: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+        learning a heuristic for inference; uses similar features as what we consider below
+
+
+features of FOK
