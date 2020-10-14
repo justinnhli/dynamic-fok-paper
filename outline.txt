@@ -1,13 +1,61 @@
 Towards a Computational Model of a Feeling of Knowing
 
-knowledge search frameworks
+situating within a strategic knowledge search framework
 
-    information foraging theory
+    memory as a strategic process
+        knowledge search (Newell1972HumanProblemSolving)
+        "the Control of Recollection" (https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf)
 
-related work
+    metamemory (https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf)
+        part of metamemory monitoring
+        could be part of search strategy selection and search termination
+    
+    information foraging theory (Pirolli2007InformationForagingTheory)
+        mostly addresses *external* sources of knowledge
+        no conception of search strategy
+        comparison with information scent
 
-    Sharma2016ControllingSearchIn: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+    FIXME
+        https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
+
+what is the role of FOK?
+
+    necessary even without forgetting, since knowledge may not be there
+
+dynamic FOKs
+
+    as conclusion from memory frameworks
+
+    separate from search cost, from confidence of answer, from base "utility"/activation
+
+non-FOK related work
+
+    https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
         learning a heuristic for inference; uses similar features as what we consider below
 
+modeling framework
 
-features of FOK
+    ACT-R, flat buffers, etc.
+
+static features of FOK (FIXME need references for all of these)
+    
+    for each one, review psychology literature
+        then map onto ACT-R model and what that might look like
+
+    cue familiarity (activation)
+
+    speed of progress towards goal
+
+    number of potential matches
+
+    number of potential next elements (fan out)
+
+dynamic features of FOK
+
+    past FOKs?
+
+evaluation metrics
+
+    unclear what FOK should look like, for queries with and without answers
+
+    need big dataset of questions and KB for evaluation?
