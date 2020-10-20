@@ -15,6 +15,12 @@ situating within a strategic knowledge search framework
         no conception of search strategy
         comparison with information scent
 
+    fluency/ accessibility approach to FOK
+    How Do We Know What We Know? Asher Koriat 1993: http://iipdm.haifa.ac.il/images/publications/Asher_Koriat/1993-Koriat-PR%20FOK.pdf
+        - "two stage" explanation of FOK: initial FOK is based on cue-familiarity and subsequent FOKs are based on accessibility
+        - According to Koriat, subsequent FOKs only occur after an incorrect answer is given, at the beginning of a new retrieval attempt. There is no mention of multiple FOKs occurring within a single retrieval.
+            - So, he is not saying that FOK is dynamic but rather that one FOK occurs for every attampted retrieval in a retrieval process (i think??)
+
     FIXME
         https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
 
@@ -50,6 +56,9 @@ static features of FOK (FIXME need references for all of these)
 
     number of potential next elements (fan out)
 
+    inverse of the number of distractors (competition fok)
+        Schreiber & Nelson https://link.springer.com/content/pdf/10.3758/BF03201170.pdf
+
 dynamic features of FOK
 
     past FOKs?
@@ -59,3 +68,37 @@ evaluation metrics
     unclear what FOK should look like, for queries with and without answers
 
     need big dataset of questions and KB for evaluation?
+
+    we claimed that FOK should be increasing when the correct answer is reached (positive slope), should decrease as you get farther from the correct answer, and should decrease when you give up
+        - but is this necessarily true? we found that changes in FOK over time heavily depended on the individual question
+
+
+
+----- bryce's unorganized notes of progress made over the summer-----
+
+- recreated Liebert and Nelson's paired recall task, made 3 different representations (direct, pairs, types)
+- since there is no standard for calculating fok, we recreated some basic ones (cue/ target familiarity)
+- wanted to look at more complex retrievals with more steps and with more information in the kb to test FOK algorithms, so we coded up Jeopardy Qs
+- created historic FOK (trend based)
+
+Parameters we held constant:
+act_decay_rate = [-0.25]
+act_scale_factor = [0.5]
+act_max_steps = [30]
+act_capped = [True]
+backlinks = [True]
+
+
+
+random things we did:
+
+- parameter to choose whether things are activated on store or not
+- used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
+- determined that cost doesn't matter to FOK, history of retrievals does (but not to our model), and history of fok is important to FOK and our model
+
+maybe unrelated things we mentioned that still seem interesting:
+
+- loooking at distance between different cues given to determine how likely you are to get an answer
+- adding a huge number of nodes to kb (unrelated or related to queries)
+- we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
+- how to broaden a query/ how to factor in what the next, less-direct query is? ex. how would the agent know that a capital is often a large city
