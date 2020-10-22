@@ -15,6 +15,32 @@ situating within a strategic knowledge search framework
         no conception of search strategy
         comparison with information scent
 
+
+    FIXME
+        https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
+
+what is the role of FOK?
+
+    necessary even without forgetting, since knowledge may not be there
+
+    determined that cost doesn't matter to FOK, history of retrievals does (but not to our model), and history of fok is important to FOK and our model
+
+    as conclusion from memory frameworks, FOK should be dynamic
+
+    separate from search cost, from confidence of answer, from base "utility"/activation
+
+    we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
+
+non-FOK related work
+
+    https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+        learning a heuristic for inference; uses similar features as what we consider below
+
+    https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
+        an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
+
+FOK related work
+
     fluency/ accessibility approach to FOK
         How Do We Know What We Know? Asher Koriat 1993: http://iipdm.haifa.ac.il/images/publications/Asher_Koriat/1993-Koriat-PR%20FOK.pdf
         - "two stage" explanation of FOK: initial FOK is based on cue-familiarity and subsequent FOKs are based on accessibility
@@ -27,32 +53,18 @@ situating within a strategic knowledge search framework
         - experiment results contradict competition hypothesis
         - (i need to reread this because I'm not sure how it's different from koriat's 1993 paper above also discussing accessibility)
 
+(Unhelpful?) FOK related work
 
-
-    FIXME
-        https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
-
-what is the role of FOK?
-
-    necessary even without forgetting, since knowledge may not be there
-
-dynamic FOKs
-
-    as conclusion from memory frameworks
-
-    separate from search cost, from confidence of answer, from base "utility"/activation
-
-non-FOK related work
-
-    https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
-        learning a heuristic for inference; uses similar features as what we consider below
-
-    https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
-        an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
 
 modeling framework
 
     ACT-R, flat buffers, etc.
+
+    parameter to choose whether things are activated on store or not
+        - when did this make a difference?
+
+    adding a huge number of nodes to kb (unrelated or related to queries)
+
 
 static features of FOK (FIXME need references for all of these)
     
@@ -73,10 +85,16 @@ static features of FOK (FIXME need references for all of these)
     number of values associated with a certain concept (num edges)
 
     amount of info known about a result compared to everything else in memory?
+        - mention using average activation (or other summary statistics)
+
+complex/ conjugate features of fok
+    - why it doesnt make sense if we can't explain meaning in the mind
 
 dynamic features of FOK
 
     past FOKs?
+
+    - used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
 
 evaluation metrics
 
@@ -86,6 +104,7 @@ evaluation metrics
 
     we claimed that FOK should be increasing when the correct answer is reached (positive slope), should decrease as you get farther from the correct answer, and should decrease when you give up
         - but is this necessarily true? we found that changes in FOK over time heavily depended on the individual question
+        - (add examples)
 
 
 
@@ -104,17 +123,7 @@ act_capped = [True]
 backlinks = [True]
 
 
-
-random things we did:
-
-- parameter to choose whether things are activated on store or not
-- used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
-- determined that cost doesn't matter to FOK, history of retrievals does (but not to our model), and history of fok is important to FOK and our model
-
-
 maybe unrelated things we mentioned that still seem interesting:
 
 - loooking at distance between different cues given to determine how likely you are to get an answer
-- adding a huge number of nodes to kb (unrelated or related to queries)
-- we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
 - how to broaden a query/ how to factor in what the next, less-direct query is? ex. how would the agent know that a capital is often a large city
