@@ -39,8 +39,6 @@ non-FOK related work
     https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
         an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
 
-
-
 FOK related work
 
     fluency/ accessibility approach to FOK
@@ -128,6 +126,8 @@ evaluation metrics
             Marapi Question:
                 - for all FOK calculations except for one (outgoing edges fok), FOK decreases as the answer is found (we had so many different retrieval steps for this question that i'm not even sure what fok pattern we were expecting/ looking for)
 
+    unidirectional search vs multidirectional search
+
 
 
 ----- bryce's unorganized notes of progress made over the summer-----
@@ -153,12 +153,6 @@ maybe unrelated things we mentioned that still seem interesting:
 
 
 Related work (not sure where each should go):
-
-https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf Salvucci "Endowing a Cognitive Architecture with World Knowledge"
-
-https://www.nngroup.com/articles/information-foraging/ (HCI paper about info foraging theory)
-
-https://www.nngroup.com/articles/information-scent/ (HCI paper on Information scent)
 
 https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
 
