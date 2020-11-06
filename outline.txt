@@ -55,6 +55,11 @@ FOK related work
 
 (Unhelpful?) FOK related work
 
+    http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf
+    discusses TOT and responds to others' work, nothing very useful here
+
+    (many of the unhelpful works found were phychology studies rather than just papers about FOK)
+
 
 modeling framework
 
@@ -138,6 +143,12 @@ evaluation metrics
 
     unidirectional search vs multidirectional search
 
+other human contextual effects
+
+    confidence: related to expectation of difficulty?
+    expectation of ease of retrieval affecting FOK?
+    #FIXME add more
+
 
 
 ----- bryce's unorganized notes of progress made over the summer-----
@@ -157,14 +168,16 @@ backlinks = [True]
 
 maybe unrelated things we mentioned that still seem interesting:
 
-- loooking at distance between different cues given to determine how likely you are to get an answer
+- looking at distance between different cues given to determine how likely you are to get an answer
 - how to broaden a query/ how to factor in what the next, less-direct query is? ex. how would the agent know that a capital is often a large city
 - free association? other than creating edges called "related_to" ?
 
 
-Related work (not sure where each should go):
+Related work:
 
 https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
+
+Psychology Studies:
 
 http://www.jstor.org/stable/24540139 correlation between confidence and accuracy
     This study sought to resolve seemingly contradicting results from previous experiments involving the correlation between confidence and accuracy in recall tests. Subjects were presented with 12 short lists of words in 12 different categories. Then they took a yes/no recognition test over a larger set of items: ⅓ the studied words (targets) from the previous task, ⅓ “related lures” (unstudied words from the same 12 categories), and ⅓ “unrelated lures” from new categories. Subjects indicated whether they believed each item to be studied or unstudied, then rated their confidence in this recognition decision on a scale from 0 to 100.
