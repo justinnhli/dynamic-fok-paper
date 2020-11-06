@@ -76,6 +76,9 @@ static features of FOK (FIXME need references for all of these)
     for each one, review psychology literature
         then map onto ACT-R model and what that might look like
 
+    accessibility
+        #FIXME
+
     cue familiarity (activation)
         #FIXME *** In our notes, we have cue familiarity = outgoing edges from cue and accessibility being activation ***
 
@@ -100,6 +103,8 @@ static features of FOK (FIXME need references for all of these)
         ex: when thinking of a country's capital, how well do you know the city you are thinking of compared to everything else you know?
 
 complex/ conjugate features of fok
+starting with computational and trying to explain it in psychological terms
+(explain in graph theory and trye to create explanations)
 
     cue activation * total edges (didn't work)
         - trying to apply Koriat (1993) idea of "The term accessibility…. subsume[s] two major cues: the amount of information activated or accessed and its intensity"
@@ -110,6 +115,7 @@ complex/ conjugate features of fok
 
     cue activation * number of outgoing edges of cue
         (the same as cue act * total edges except only looks at coutgoing edges rather than incoming and outgoing)
+        - how to explain that out edges is different than total edges in terms of example??
 
     activation of target * number of outgoing edges of target
         ex: when asked to name a country's capital, how much information do you know about the city you are thinking of and how strongly do you know it?
@@ -147,9 +153,6 @@ other human contextual effects
 
     confidence: related to expectation of difficulty?
     expectation of ease of retrieval affecting FOK?
-    #FIXME add more
-
-
 
 ----- bryce's unorganized notes of progress made over the summer-----
 
