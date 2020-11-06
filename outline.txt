@@ -72,35 +72,45 @@ static features of FOK (FIXME need references for all of these)
         then map onto ACT-R model and what that might look like
 
     cue familiarity (activation)
+        #FIXME *** In our notes, we have cue familiarity = outgoing edges from cue and accessibility being activation ***
 
     speed of progress towards goal
+        ex: how quickly could you come up with a country's capital? (did multiple strategies have to be used because some failed?)
 
     number of potential matches
+        ex: when thinking of a country's capital, how many different possible cities come to mind?
 
     number of potential next elements (fan out)
+        #FIXME how is this different from number of potential matches?
 
     inverse of the number of distractors (competition fok)
         Schreiber & Nelson https://link.springer.com/content/pdf/10.3758/BF03201170.pdf
+        ex: when thinking of a country's capital, if you know many large cities that could be the capital, the one you decide to go with is unlikely to be correct given the large number of possibilities you have.
 
-    number of values associated with a certain concept (num edges)
+    number of values associated with a certain concept (outgoing edges from cue)
+        ex: when asked to name the capital of a country, the more you know about that country in general, the more likely it is that you know the capital.
 
-    amount of info known about a result compared to everything else in memory?
+    amount of info known about a result compared to everything else in memory
         - mention using average activation (or other summary statistics)
+        ex: when thinking of a country's capital, how well do you know the city you are thinking of compared to everything else you know?
 
 complex/ conjugate features of fok
-    - explain why it doesn't make sense if we can't explain meaning in terms of the human mind
+
     cue activation * total edges (didn't work)
-        - How much you know about something combined with how strongly you know it??
         - trying to apply Koriat (1993) idea of "The term accessibility…. subsume[s] two major cues: the amount of information activated or accessed and its intensity"
+        ex: when thinking of a country's capital, how much information do you know about the country and how strongly do you know it?
 
     average of cue and target activations (didn't use?)
-        - taking into account familiarity of both the cue and target
+        ex: when naming a country's capital, how well do you know the country and how well do you know the possible answer you are currently thinking of?
 
-    activation of cue * number of outgoing edges of cue
+    cue activation * number of outgoing edges of cue
+        (the same as cue act * total edges except only looks at coutgoing edges rather than incoming and outgoing)
 
     activation of target * number of outgoing edges of target
+        ex: when asked to name a country's capital, how much information do you know about the city you are thinking of and how strongly do you know it?
 
     activation over edges: log of current ratio of activation to edges divided by avg ratio of actviation to edges
+        ex: when thinking of a country's capital, given the number of things you know about the city you are currently thinking of, how well do you know this city? (doesn't really make sense, like how well it is known per piece of informaiton known about it)
 
 
 dynamic features of FOK
