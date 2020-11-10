@@ -38,6 +38,22 @@
 
 * we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
 
+## modeling framework
+
+* ACT-R, flat buffers, etc.
+
+* parameter to choose whether things are activated on store or not
+    * when did this make a difference?
+
+* adding a huge number of nodes to kb (unrelated or related to queries)
+
+## methodological questions
+
+* three questions from https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+    1. How accurate is FOK?
+    2. How is FOK produced?
+    3. How does Q2 account for Q1?
+
 ## FOK related work
 
 * fluency/ accessibility approach to FOK
@@ -52,14 +68,6 @@
     * experiment results contradict competition hypothesis
     * (i need to reread this because I'm not sure how it's different from koriat's 1993 paper above also discussing accessibility)
 
-## modeling framework
-
-* ACT-R, flat buffers, etc.
-
-* parameter to choose whether things are activated on store or not
-    * when did this make a difference?
-
-* adding a huge number of nodes to kb (unrelated or related to queries)
 
 ## static features of FOK (FIXME need references for all of these)
 
