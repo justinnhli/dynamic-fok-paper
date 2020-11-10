@@ -12,8 +12,8 @@
 
 * memory as a strategic process
     * knowledge search (Newell1972HumanProblemSolving)
-    * "the Control of Recollection" (https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf)
-* metamemory (https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf)
+    * "the Control of Recollection" (<https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf)>
+* metamemory (<https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf)>
     * part of metamemory monitoring
     * could be part of search strategy selection and search termination
 * information foraging theory (Pirolli2007InformationForagingTheory)
@@ -21,7 +21,7 @@
     * no conception of search strategy
     * comparison with information scent
 * FIXME
-    * https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
+    * <https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf>
 
 # what is the role of FOK?
 
@@ -40,11 +40,11 @@
 
 # methodological outline
 
-* three questions from https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+* three questions from <https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf>
     1. How accurate is FOK?
     2. How is FOK produced?
     3. How does Q2 account for Q1?
-* 12 mechanisms from https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf
+* 12 mechanisms from <https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf>
     * Trace-access mechanisms
         * Subthreshold strength
         * Forward-backward associations
@@ -63,12 +63,12 @@
 # FOK related work
 
 * recognition
-    * "trace-based view" in https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
-        * consulting an index first; see https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
+    * "trace-based view" in <https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf>
+        * consulting an index first; see <https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf>
     * possible models
-        * see https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
+        * see <https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf>
 * accessibility of pertinent information
-    * "accessibility" in https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+    * "accessibility" in <https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf>
         * "These include activations from the terms in the question; structural, contextual, and semantic attributes; fragments of the target; and so on."
             * importantly, these are "parasitic" (ie. a side effect) of retrieval itself
             * they exist even if the retrieval itself fails
@@ -84,8 +84,8 @@
 * cue familiarity
     * used as first step before accessibility
         * multiple sources (both Koriat)
-            * https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
-            * https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
+            * <https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf>
+            * <https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf>
         * makes sense from a computational perspective: cue familiarity is cheap and should be used as a gate
     * Bryce's notes
         * experiment results contradict competition hypothesis
@@ -102,7 +102,7 @@
 * number of potential next elements (fan out)
     * FIXME how is this different from number of potential matches?
 * inverse of the number of distractors (competition fok)
-    * Schreiber & Nelson https://link.springer.com/content/pdf/10.3758/BF03201170.pdf
+    * Schreiber & Nelson <https://link.springer.com/content/pdf/10.3758/BF03201170.pdf>
     * ex: when thinking of a country's capital, if you know many large cities that could be the capital, the one you decide to go with is unlikely to be correct given the large number of possibilities you have.
 * number of values associated with a certain concept (outgoing edges from cue)
     * ex: when asked to name the capital of a country, the more you know about that country in general, the more likely it is that you know the capital.
@@ -135,13 +135,13 @@
 # Related Work
 
 * (Unhelpful?) FOK related work
-    * http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf
+    * <http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf>
     * discusses TOT and responds to others' work, nothing very useful here
     * (many of the unhelpful works found were phychology studies rather than just papers about FOK)
 * computational KB work
-    * https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+    * <https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf>
         * learning a heuristic for inference; uses similar features as what we consider below
-    * https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
+    * <https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf>
         * an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
 
 # evaluation metrics
@@ -167,7 +167,7 @@
 
 -----
 
- bryce's unorganized notes of progress made over the summer
+# bryce's unorganized notes of progress made over the summer
 
 * recreated Liebert and Nelson's paired recall task, made 3 different representations (direct, pairs, types)
 * since there is no standard for calculating fok, we recreated some basic ones (cue/ target familiarity)
@@ -188,16 +188,16 @@ maybe unrelated things we mentioned that still seem interesting:
 
 # Related work:
 
-* https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
+* <https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf> Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
 
 # Psychology Studies:
 
-* http://www.jstor.org/stable/24540139 correlation between confidence and accuracy
+* <http://www.jstor.org/stable/24540139> correlation between confidence and accuracy
     * This study sought to resolve seemingly contradicting results from previous experiments involving the correlation between confidence and accuracy in recall tests. Subjects were presented with 12 short lists of words in 12 different categories. Then they took a yes/no recognition test over a larger set of items: ⅓ the studied words (targets) from the previous task, ⅓ “related lures” (unstudied words from the same 12 categories), and ⅓ “unrelated lures” from new categories. Subjects indicated whether they believed each item to be studied or unstudied, then rated their confidence in this recognition decision on a scale from 0 to 100.
     * Results: 70-73% correct for targets
     * 28-39% false alarms for related lures
     * 10% false alarms for unrelated lures
-* https://search-proquest-com.oxy.idm.oclc.org/docview/614333827?accountid=12935
+* <https://search-proquest-com.oxy.idm.oclc.org/docview/614333827?accountid=12935>
 * Nelson & Narens 1984
     * Tested two tests of FOK:
         * -perceptual identification (based on pre-experimental history of participant)
@@ -210,8 +210,8 @@ maybe unrelated things we mentioned that still seem interesting:
     * Findings:
         * -perceptual identification and relearning were found to not differ greatly in the rates of how search for non recalled answers is determined by what people feel they know rather than what they know
         * -relearning experiment showed that FOK is also reliable predictor of relearning
-* https://search-proquest-com.oxy.idm.oclc.org/docview/1794829606?accountid=12935
-* experiments that assess role of factors that shape FOK judgements
+* <https://search-proquest-com.oxy.idm.oclc.org/docview/1794829606?accountid=12935>
+    * experiments that assess role of factors that shape FOK judgements
     * Experiment 1: investigations of context effects in recognition
         * Involves participants studying cue-target pairs of words presented w/ photos
         * Next cued-recall test, participants presented w/ cues and asked to retrieve photo targets
@@ -226,8 +226,8 @@ maybe unrelated things we mentioned that still seem interesting:
     * Results:
         * FOK judgements were influenced by context familiarity, with later recognition of unrecalled targets
         * Higher predictions of later recognition due to context reinstatement
-* https://www.sciencedirect.com/science/article/abs/pii/S1053810014001561
-* (Oxy doesn't grant access, but I have a PDF of it)
+* <https://www.sciencedirect.com/science/article/abs/pii/S1053810014001561>
+    * (Oxy doesn't grant access, but I have a PDF of it)
     * Experiment:
         * Participants were each shown a number of made-up creatures that were accompanied with varying levels (there were three different levels) of contextual information. For example, some creatures would only have a name listed, some would have name and country of origin, and some would have name, country, diet, and weight. FOKs were measured for identifying both the animal given context, and context given animal.
     * Results:
