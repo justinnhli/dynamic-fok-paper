@@ -38,7 +38,7 @@
 
 * we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
 
-## modeling framework
+## Modeling Framework
 
 * ACT-R, flat buffers, etc.
 
@@ -47,12 +47,27 @@
 
 * adding a huge number of nodes to kb (unrelated or related to queries)
 
-## methodological questions
+## methodological outline
 
 * three questions from https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
     1. How accurate is FOK?
     2. How is FOK produced?
     3. How does Q2 account for Q1?
+* 12 mechanisms from https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf
+    * Trace-access mechanisms
+        * Subthreshold strength
+        * Forward-backward associations
+        * Correct semantic referent but no label
+        * Partial recall of label
+        * Wrong referent
+        * Multidimensional target
+    * Inferential mechanisms
+        * Related episodic information
+        * Claimed related episodic information
+        * Recognition of cue
+        * Expertise on topics
+        * Actuarial information
+        * Social desirability
 
 ## FOK related work
 
