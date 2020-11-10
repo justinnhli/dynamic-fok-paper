@@ -38,14 +38,6 @@
 
 * we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
 
-## non-FOK related work
-
-* https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
-    * learning a heuristic for inference; uses similar features as what we consider below
-
-* https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
-    * an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
-
 ## FOK related work
 
 * fluency/ accessibility approach to FOK
@@ -59,13 +51,6 @@
     * the accessibility and cue familiarity hypotheses for FOK are not mutually exclusive, but rather two distinct processes that contribute to overall FOK separately
     * experiment results contradict competition hypothesis
     * (i need to reread this because I'm not sure how it's different from koriat's 1993 paper above also discussing accessibility)
-
-## (Unhelpful?) FOK related work
-
-* http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf
-* discusses TOT and responds to others' work, nothing very useful here
-
-* (many of the unhelpful works found were phychology studies rather than just papers about FOK)
 
 ## modeling framework
 
@@ -134,6 +119,21 @@
 * past FOKs?
 
 * used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
+
+## Related Work
+
+* (Unhelpful?) FOK related work
+    * http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf
+    * discusses TOT and responds to others' work, nothing very useful here
+    * (many of the unhelpful works found were phychology studies rather than just papers about FOK)
+
+* computational KB work
+
+    * https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+        * learning a heuristic for inference; uses similar features as what we consider below
+
+    * https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
+        * an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
 
 ## evaluation metrics
 
