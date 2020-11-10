@@ -71,29 +71,41 @@
 
 ## FOK related work
 
-* fluency/ accessibility approach to FOK
-    * How Do We Know What We Know? Asher Koriat 1993: http://iipdm.haifa.ac.il/images/publications/Asher_Koriat/1993-Koriat-PR%20FOK.pdf
-    * "two stage" explanation of FOK: initial FOK is based on cue-familiarity and subsequent FOKs are based on accessibility
-    * According to Koriat, subsequent FOKs only occur after an incorrect answer is given, at the beginning of a new retrieval attempt. There is no mention of multiple FOKs occurring within a single retrieval.
-        * So, he is not saying that FOK is dynamic but rather that one FOK occurs for every attampted retrieval in a retrieval process (i think??)
+* recognition
+    * "trace-based view" in https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+        * consulting an index first; see https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
+    * possible models
+        * see https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
 
-* accessibility and cue familiarity
-    * https://iipdm.haifa.ac.il/images/publications/Asher_Koriat/2001-KorLevySadot-JEPLMC.pdf
-    * the accessibility and cue familiarity hypotheses for FOK are not mutually exclusive, but rather two distinct processes that contribute to overall FOK separately
-    * experiment results contradict competition hypothesis
-    * (i need to reread this because I'm not sure how it's different from koriat's 1993 paper above also discussing accessibility)
+* accessibility of pertinent information
+    * "accessibility" in https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+        * "These include activations from the terms in the question; structural, contextual, and semantic attributes; fragments of the target; and so on."
+            * importantly, these are "parasitic" (ie. a side effect) of retrieval itself
+            * they exist even if the retrieval itself fails
+        * "The cues that are used in computing FOK during a retrieval attempt can be classified into two types, those that have to do with the accessibility of information pertaining to the target and those that are based on the specific content of the information accessed. The term accessibility will be used here to subsume two major cues: the amount of information activated or accessed and its intensity (e.g., its ease of access, vividness, specificity, and persistence). [...] In other cases, however, the subject may be able to evaluate the content of the information recovered, pitting different clues against each other and making de- liberate, educated inferences about the plausibility that the solicited target will be subsequently recalled or recognized. This may sometimes be the case with real-world knowledge, particularly at the later stages of retrieval."
+        * however, can be super broad:
+            * capitals of similar/related countries
+            * partial retrievals
+            * incorrect retrievals
+    * possible models
+        * hard to say, given broadness
+            * Koriat classifies it as an "inferential mechanism"; may not be a simple signal?
+            * also hints at dynamic nature - by definition, depends on what results have come back, and will change over time
 
-
-## static features of FOK (FIXME need references for all of these)
-
-* for each one, review psychology literature
-    * then map onto ACT-R model and what that might look like
-
-* accessibility
-    * FIXME
-
-* cue familiarity (activation)
-    * FIXME In our notes, we have cue familiarity = outgoing edges from cue and accessibility being activation
+* cue familiarity
+    * used as first step before accessibility
+        * multiple sources (both Koriat)
+            * https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+            * https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
+        * makes sense from a computational perspective: cue familiarity is cheap and should be used as a gate
+    * Bryce's notes
+        * experiment results contradict competition hypothesis
+        * (I need to reread this because I'm not sure how it's different from Koriat's 1993 paper above also discussing accessibility)
+    * possible models
+        * activation
+            * rationale: base-level activation determines how recently and frequent an item is used, hence "familiar" with it
+        * fan in/out/all
+            * rationale: amount of associated knowledge with that item
 
 * speed of progress towards goal
     * ex: how quickly could you come up with a country's capital? (did multiple strategies have to be used because some failed?)
