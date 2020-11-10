@@ -1,5 +1,13 @@
 # Towards a Computational Model of a Feeling of Knowing
 
+## introduction
+
+* what is FOK
+* brief of existing psychology theories
+    * accessibility
+    * cue familiarity
+* no existing models in a cognitive architecture?
+
 ## situating within a strategic knowledge search framework
 
 * memory as a strategic process
