@@ -147,6 +147,9 @@
     * <http://cogprints.org/7586/1/Mangan_2000_FeelingOfKnowing_ConsciousnessAndCognition.pdf>
     * discusses TOT and responds to others' work, nothing very useful here
     * (many of the unhelpful works found were psychology studies rather than just papers about FOK)
+    * <https://www-jstor-org.oxy.idm.oclc.org/stable/1423727?Search=yes&resultItemClick=true&searchText=%28feeling&searchText=of&searchText=knowing%29&searchText=AND&searchText=%28manipulate%29&searchUri=%2Faction%2FdoBasicSearch%3FsearchType%3DfacetSearch%26amp%3Bsd%3D%26amp%3Bed%3D%26amp%3Bdisc_psychology-discipline_facet%3DcHN5Y2hvbG9neS1kaXNjaXBsaW5l%26amp%3BQuery%3Dmanipulate%26amp%3Bprq%3Dfeeling%2Bof%2Bknowing%26amp%3Bswp%3Don%26amp%3Bhp%3D25%26amp%3Bacc%3Don%26amp%3Bso%3Drel&ab_segments=0%2Fbasic_SYC-4946%2Fcontrol&seq=1#metadata_info_tab_contents>
+    * discusses the Ranschburg effect and how retrieval ease affects FOK
+    * (could go with other human contextual effects?)
 * computational KB work
     * <https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf>
         * learning a heuristic for inference; uses similar features as what we consider below
@@ -173,6 +176,8 @@
 
     confidence: related to expectation of difficulty?
     expectation of ease of retrieval affecting FOK?
+    study on "easy" vs "difficult" questions
+    * <https://www.jstor.org/stable/1423392?Search=yes&resultItemClick=true&searchText=feeling&searchText=of&searchText=knowing&searchUri=%2Faction%2FdoBasicSearch%3FQuery%3Dfeeling%2Bof%2Bknowing%26amp%3Bacc%3Don%26amp%3Bwc%3Don%26amp%3Bfc%3Doff%26amp%3Bgroup%3Dnone&ab_segments=0%2Fbasic_SYC-4946%2Fcontrol&refreqid=search%3A711b452ecbb445f8f7801c9ac43202b5&seq=1>
 
 -----
 
