@@ -50,15 +50,18 @@
         * Forward-backward associations
         * Correct semantic referent but no label
         * Partial recall of label
+            * both of the above are related to partial retrieval
         * Wrong referent
         * Multidimensional target
     * Inferential mechanisms
         * Related episodic information
-        * Claimed related episodic information
         * Recognition of cue
+        * Claimed related episodic information
         * Expertise on topics
         * Actuarial information
         * Social desirability
+            * the last four here might be related to Florer2000FeelingsOfKnowing
+            * in that they are usual contextual knowledge
 
 # FOK related work
 
@@ -150,6 +153,16 @@
     * [Florer2000FeelingsOfKnowing](https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf)
         * discusses the Ranschburg effect and how retrieval ease affects FOK
         * (could go with other human contextual effects?)
+    * [Nelson1984AccuracyOfFeeling](https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf)
+        * lists twelve potential mechanisms for FOK in the discussion
+        * proposed alternate methods of measuring the accuracy of FOK
+            * note: procedure is recall, FOK, measure, so may not be relevant for argument of dynamic FOK
+        * instead of recognition as metric, proposed:
+            * perceptual identification (based on pre-experimental history of participant)
+            * relearning
+        * results
+            * perceptual identification and relearning were found to not differ greatly in the rates of how search for non recalled answers is determined by what people feel they know rather than what they know
+            * FOK is also reliable predictor of relearning
 * computational KB work
     * [Sharma2016ControllingSearchIn](https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf)
         * learning a heuristic for inference; uses similar features as what we consider below
@@ -211,19 +224,6 @@ maybe unrelated things we mentioned that still seem interesting:
     * Results: 70-73% correct for targets
     * 28-39% false alarms for related lures
     * 10% false alarms for unrelated lures
-* [Nelson1984AccuracyOfFeeling](https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf)
-* Nelson & Narens 1984 [Nelson1984AccuracyOfFeeling](https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf)
-    * Tested two tests of FOK:
-        * -perceptual identification (based on pre-experimental history of participant)
-        * -relearning
-    * Participants presented questions then answers to the questions
-    * Methods:
-    * Participants were asked to answer general questions such as what is the biggest planet in the solar system?
-    * Their judgment of whether they would know the correct answer or not are tracked
-    * Feeling of knowing judgments are ranked
-    * Findings:
-        * -perceptual identification and relearning were found to not differ greatly in the rates of how search for non recalled answers is determined by what people feel they know rather than what they know
-        * -relearning experiment showed that FOK is also reliable predictor of relearning
 * [Hanczakowski2017MetamemoryInA](https://justinnhli.com/papers/h/Hanczakowski2017MetamemoryInA.pdf)
     * experiments that assess role of factors that shape FOK judgments
     * Experiment 1: investigations of context effects in recognition
