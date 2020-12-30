@@ -163,6 +163,12 @@
         * results
             * perceptual identification and relearning were found to not differ greatly in the rates of how search for non recalled answers is determined by what people feel they know rather than what they know
             * FOK is also reliable predictor of relearning
+    * [Widner1996TheEffectsOf](https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf)
+        * on whether you're willing to admit you don't know
+            * indeed, the high-demand condition led to more tip-of-the-tongue states
+        * confidence: related to expectation of difficulty?
+        * expectation of ease of retrieval affecting FOK?
+        * study on "easy" vs "difficult" questions
 * computational KB work
     * [Sharma2016ControllingSearchIn](https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf)
         * learning a heuristic for inference; uses similar features as what we consider below
@@ -184,13 +190,6 @@
         * Marapi Question:
             * for all FOK calculations except for one (outgoing edges FOK), FOK decreases as the answer is found (we had so many different retrieval steps for this question that i'm not even sure what FOK pattern we were expecting/ looking for)
 * unidirectional search vs multi-directional search
-
-## other human contextual effects
-
-* [Widner1996TheEffectsOf](https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf)
-    * confidence: related to expectation of difficulty?
-    * expectation of ease of retrieval affecting FOK?
-    * study on "easy" vs "difficult" questions
 
 -----
 
