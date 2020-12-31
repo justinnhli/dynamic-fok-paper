@@ -12,8 +12,8 @@
 
 * memory as a strategic process
     * knowledge search (Newell1972HumanProblemSolving)
-    * "the Control of Recollection" ([Burgess1996ConfabulationAndThe](https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf)
-* metamemory ([Nelson1990MetamemoryATheoretical](https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf)
+    * "the Control of Recollection" ([Burgess1996ConfabulationAndThe]
+* metamemory ([Nelson1990MetamemoryATheoretical]
     * part of metamemory monitoring
     * could be part of search strategy selection and search termination
 * information foraging theory (Pirolli2007InformationForagingTheory)
@@ -21,7 +21,7 @@
     * no conception of search strategy
     * comparison with information scent
 * FIXME
-    * [Nelson2008TowardsARational](https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf)
+    * [Nelson2008TowardsARational]
 
 # what is the role of FOK?
 
@@ -40,11 +40,11 @@
 
 # methodological outline
 
-* three questions from [Koriat1993HowDoWe](https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf)
+* three questions from [Koriat1993HowDoWe]
     1. How accurate is FOK?
     2. How is FOK produced?
     3. How does Q2 account for Q1?
-* 12 mechanisms from [Nelson1984AccuracyOfFeeling](https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf)
+* 12 mechanisms from [Nelson1984AccuracyOfFeeling]
     * Trace-access mechanisms
         * Subthreshold strength
         * Forward-backward associations
@@ -67,15 +67,15 @@
 
 * recognition
     * literature
-        * "trace-based view" in [Koriat1993HowDoWe](https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf)
-            * consulting an index first; see [Li2012FunctionalInteractionsBetween](https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf)
+        * "trace-based view" in [Koriat1993HowDoWe]
+            * consulting an index first; see [Li2012FunctionalInteractionsBetween]
     * example
         * FIXME
     * possible models
-        * see [Li2012FunctionalInteractionsBetween](https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf)
+        * see [Li2012FunctionalInteractionsBetween]
 * accessibility of pertinent information
     * literature
-        * "accessibility" in [Koriat1993HowDoWe](https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf)
+        * "accessibility" in [Koriat1993HowDoWe]
             * "These include activations from the terms in the question; structural, contextual, and semantic attributes; fragments of the target; and so on."
                 * importantly, these are "parasitic" (ie. a side effect) of retrieval itself
                 * they exist even if the retrieval itself fails
@@ -94,8 +94,8 @@
     * literature
         * used as first step before accessibility
             * multiple sources (both Koriat)
-                * [Koriat1993HowDoWe](https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf)
-                * [Koriat2001TheCombinedContributions](https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf)
+                * [Koriat1993HowDoWe]
+                * [Koriat2001TheCombinedContributions]
             * makes sense from a computational perspective: cue familiarity is cheap and should be used as a gate
     * Bryce's notes
         * experiment results contradict competition hypothesis
@@ -114,7 +114,7 @@
 * number of potential next elements (fan out)
     * FIXME how is this different from number of potential matches?
 * inverse of the number of distractors (competition FOK)
-    * [Schreiber1998TheRelationBetween](https://justinnhli.com/papers/s/Schreiber1998TheRelationBetween.pdf)
+    * [Schreiber1998TheRelationBetween]
     * ex: when thinking of a country's capital, if you know many large cities that could be the capital, the one you decide to go with is unlikely to be correct given the large number of possibilities you have.
 * number of values associated with a certain concept (outgoing edges from cue)
     * ex: when asked to name the capital of a country, the more you know about that country in general, the more likely it is that you know the capital.
@@ -147,13 +147,13 @@
 # Related Work
 
 * (Unhelpful?) FOK related work
-    * [Mangan2000WhatFeelingIs](https://justinnhli.com/papers/m/Mangan2000WhatFeelingIs.pdf)
+    * [Mangan2000WhatFeelingIs]
         * discusses TOT and responds to others' work, nothing very useful here
         * (many of the unhelpful works found were psychology studies rather than just papers about FOK)
-    * [Florer2000FeelingsOfKnowing](https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf)
+    * [Florer2000FeelingsOfKnowing]
         * discusses the Ranschburg effect and how retrieval ease affects FOK
         * (could go with other human contextual effects?)
-    * [Nelson1984AccuracyOfFeeling](https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf)
+    * [Nelson1984AccuracyOfFeeling]
         * lists twelve potential mechanisms for FOK in the discussion
         * proposed alternate methods of measuring the accuracy of FOK
             * note: procedure is recall, FOK, measure, so may not be relevant for argument of dynamic FOK
@@ -163,16 +163,16 @@
         * results
             * perceptual identification and relearning were found to not differ greatly in the rates of how search for non recalled answers is determined by what people feel they know rather than what they know
             * FOK is also reliable predictor of relearning
-    * [Widner1996TheEffectsOf](https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf)
+    * [Widner1996TheEffectsOf]
         * on whether you're willing to admit you don't know
             * indeed, the high-demand condition led to more tip-of-the-tongue states
         * confidence: related to expectation of difficulty?
         * expectation of ease of retrieval affecting FOK?
         * study on "easy" vs "difficult" questions
 * computational KB work
-    * [Sharma2016ControllingSearchIn](https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf)
+    * [Sharma2016ControllingSearchIn]
         * learning a heuristic for inference; uses similar features as what we consider below
-    * [Salvucci2015EndowingACognitive](https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf)
+    * [Salvucci2015EndowingACognitive]
         * an ACT-R DBpedia paper we read, talks about triplet and chunk representations?
 
 # evaluation metrics
@@ -214,16 +214,16 @@ maybe unrelated things we mentioned that still seem interesting:
 
 # Related work:
 
-* [Li2016ArchitecturalMechanismsFor](https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf) Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
+* [Li2016ArchitecturalMechanismsFor] Justin's 2016 paper on "Architectural Mechanisms for Mitigating Uncertainty during Long-Term Declarative Knowledge Access"
 
 # Psychology Studies:
 
-* [DeSoto2014PositiveAndNegative](https://justinnhli.com/papers/d/DeSoto2014PositiveAndNegative.pdf) correlation between confidence and accuracy
+* [DeSoto2014PositiveAndNegative] correlation between confidence and accuracy
     * This study sought to resolve seemingly contradicting results from previous experiments involving the correlation between confidence and accuracy in recall tests. Subjects were presented with 12 short lists of words in 12 different categories. Then they took a yes/no recognition test over a larger set of items: 1/3 the studied words (targets) from the previous task, 1/3 "related lures" (unstudied words from the same 12 categories), and 1/3 "unrelated lures" from new categories. Subjects indicated whether they believed each item to be studied or unstudied, then rated their confidence in this recognition decision on a scale from 0 to 100.
     * Results: 70-73% correct for targets
     * 28-39% false alarms for related lures
     * 10% false alarms for unrelated lures
-* [Hanczakowski2017MetamemoryInA](https://justinnhli.com/papers/h/Hanczakowski2017MetamemoryInA.pdf)
+* [Hanczakowski2017MetamemoryInA]
     * experiments that assess role of factors that shape FOK judgments
     * Experiment 1: investigations of context effects in recognition
         * Involves participants studying cue-target pairs of words presented w/ photos
@@ -239,10 +239,29 @@ maybe unrelated things we mentioned that still seem interesting:
     * Results:
         * FOK judgments were influenced by context familiarity, with later recognition of unrecalled targets
         * Higher predictions of later recognition due to context reinstatement
-* [Schwartz2014ContextualInformationInfluences](https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf)
+* [Schwartz2014ContextualInformationInfluences]
     * (Oxy doesn't grant access, but I have a PDF of it)
     * Experiment:
         * Participants were each shown a number of made-up creatures that were accompanied with varying levels (there were three different levels) of contextual information. For example, some creatures would only have a name listed, some would have name and country of origin, and some would have name, country, diet, and weight. FOKs were measured for identifying both the animal given context, and context given animal.
     * Results:
         * Participants had higher FOKs for retrieving animals that came with more context (second two levels). This makes sense because of spreading activation, if any of the given animals shared traits. Also, if country and diet were not made up places/ things, they might have some activation already from before the experiment.
     * Made up animals represent new information that a person doesn't have any context for, despite the size or contents of their knowledge base. - So, adding context for each animal creates entirely new nodes and edges that would not have been referenced before. (ie. if country and diet were also made up things)
+
+
+[Burgess1996ConfabulationAndThe]: https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf
+[DeSoto2014PositiveAndNegative]: https://justinnhli.com/papers/d/DeSoto2014PositiveAndNegative.pdf
+[Florer2000FeelingsOfKnowing]: https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf
+[Hanczakowski2017MetamemoryInA]: https://justinnhli.com/papers/h/Hanczakowski2017MetamemoryInA.pdf
+[Koriat1993HowDoWe]: https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+[Koriat2001TheCombinedContributions]: https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
+[Li2012FunctionalInteractionsBetween]: https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
+[Li2016ArchitecturalMechanismsFor]: https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf
+[Mangan2000WhatFeelingIs]: https://justinnhli.com/papers/m/Mangan2000WhatFeelingIs.pdf
+[Nelson1984AccuracyOfFeeling]: https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf
+[Nelson1990MetamemoryATheoretical]: https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf
+[Nelson2008TowardsARational]: https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
+[Salvucci2015EndowingACognitive]: https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
+[Schreiber1998TheRelationBetween]: https://justinnhli.com/papers/s/Schreiber1998TheRelationBetween.pdf
+[Schwartz2014ContextualInformationInfluences]: https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf
+[Sharma2016ControllingSearchIn]: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+[Widner1996TheEffectsOf]: https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf
