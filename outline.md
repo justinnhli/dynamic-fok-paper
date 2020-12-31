@@ -98,7 +98,7 @@
                 * [Koriat2001TheCombinedContributions]
             * makes sense from a computational perspective: cue familiarity is cheap and should be used as a gate
     * Bryce's notes
-        * experiment results contradict competition hypothesis
+        * experiment results contradict competition hypothesis ([Schreiber1998TheRelationBetween])
         * (I need to reread this because I'm not sure how it's different from Koriat's 1993 paper above also discussing accessibility)
     * example
         * FIXME
