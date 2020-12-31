@@ -12,8 +12,8 @@
 
 * memory as a strategic process
     * knowledge search (Newell1972HumanProblemSolving)
-    * "the Control of Recollection" ([Burgess1996ConfabulationAndThe]
-* metamemory ([Nelson1990MetamemoryATheoretical]
+    * "the Control of Recollection" ([Burgess1996ConfabulationAndThe])
+* metamemory ([Nelson1990MetamemoryATheoretical])
     * part of metamemory monitoring
     * could be part of search strategy selection and search termination
 * information foraging theory (Pirolli2007InformationForagingTheory)
