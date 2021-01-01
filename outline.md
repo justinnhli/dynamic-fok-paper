@@ -113,8 +113,14 @@
     * ex: when thinking of a country's capital, how many different possible cities come to mind?
 * number of potential next elements (fan out)
     * FIXME how is this different from number of potential matches?
-* inverse of the number of distractors (competition FOK)
-    * [Schreiber1998TheRelationBetween]
+* inverse of the number of distractors (competition FOK) [Schreiber1998TheRelationBetween]
+    * experimental results that show FOK is inversely correlated with number of relevant facts
+        * paper goes into detail about types of facts that contribute to this
+        * acknolwedges that both "partial-retrieval" and competition plays a role
+            * separates cue recognition as third thing, since experiments can use made-up words
+    * may be related to bias variance tradeoff?
+        * that is, if a relevant facts hints at other competing answers, descrease FOK
+        * slightly different from what was proposed in the paper: not just type of fact, but its relation to possible answers as well
     * ex: when thinking of a country's capital, if you know many large cities that could be the capital, the one you decide to go with is unlikely to be correct given the large number of possibilities you have.
 * number of values associated with a certain concept (outgoing edges from cue)
     * ex: when asked to name the capital of a country, the more you know about that country in general, the more likely it is that you know the capital.
