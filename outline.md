@@ -153,9 +153,6 @@
 # Related Work
 
 * (Unhelpful?) FOK related work
-    * [Mangan2000WhatFeelingIs]
-        * discusses TOT and responds to others' work, nothing very useful here
-        * (many of the unhelpful works found were psychology studies rather than just papers about FOK)
     * [Florer2000FeelingsOfKnowing]
         * discusses the Ranschburg effect and how retrieval ease affects FOK
         * (could go with other human contextual effects?)
