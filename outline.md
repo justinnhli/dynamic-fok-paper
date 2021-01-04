@@ -60,8 +60,9 @@
         * Expertise on topics
         * Actuarial information
         * Social desirability
-            * the last four here might be related to Florer2000FeelingsOfKnowing
+            * the last four here might be related to Schwartz2014ContextualInformationInfluences
             * in that they are usual contextual knowledge
+* pre- and post-retrieval accounts ([Florer2000FeelingsOfKnowing]) muddled in dynamic FOK
 
 # FOK related work
 
@@ -69,6 +70,8 @@
     * literature
         * "trace-based view" in [Koriat1993HowDoWe]
             * consulting an index first; see [Li2012FunctionalInteractionsBetween]
+        * considered pre-retrieval in Florer2000FeelingsOfKnowing
+            * unclear how this is different from cue-familiarity in that paper
     * example
         * FIXME
     * possible models
@@ -84,6 +87,10 @@
                 * capitals of similar/related countries
                 * partial retrievals
                 * incorrect retrievals
+        * as intra-retrieval account of FOK in [Florer2000FeelingsOfKnowing]
+            * in contrast to pre-retrieval FOK, as in recognition/cue-familiarity
+            * manipulate accessibility/retrieval correctness via Ranschburg effect
+                * where strings with repeated letters (RFKXFNL) are recalled less accurately than strings without (RFKXBNL)
     * example
         * FIXME
     * possible models
@@ -97,6 +104,8 @@
                 * [Koriat1993HowDoWe]
                 * [Koriat2001TheCombinedContributions]
             * makes sense from a computational perspective: cue familiarity is cheap and should be used as a gate
+        * considered pre-retrieval in Florer2000FeelingsOfKnowing
+            * unclear how this is different from recognition in that paper
     * Bryce's notes
         * experiment results contradict competition hypothesis ([Schreiber1998TheRelationBetween])
         * (I need to reread this because I'm not sure how it's different from Koriat's 1993 paper above also discussing accessibility)
@@ -153,9 +162,6 @@
 # Related Work
 
 * (Unhelpful?) FOK related work
-    * [Florer2000FeelingsOfKnowing]
-        * discusses the Ranschburg effect and how retrieval ease affects FOK
-        * (could go with other human contextual effects?)
     * [Nelson1984AccuracyOfFeeling]
         * lists twelve potential mechanisms for FOK in the discussion
         * proposed alternate methods of measuring the accuracy of FOK
