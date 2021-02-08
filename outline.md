@@ -30,6 +30,9 @@
 * as conclusion from memory frameworks, FOK should be dynamic
 * separate from search cost, from confidence of answer, from base "utility"/activation
 * we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
+* potential roles of FOK from <https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf>
+    * could be used for control as well as monitoring, as it was found that FOK influences restudy choices
+    * FOKs may replace JOLs after failed a recall attempt
 
 # Modeling Framework
 
@@ -158,6 +161,14 @@
 
 * past FOKs?
 * used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
+
+# TOT states (I'm not sure where this should go)
+<https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf>
+* approaches to understanding TOT:
+    * direct access view - something blocks retrrieval so that the activation of the target is high enough to cause a TOT state, but too low for recall
+    * two-step view - TOT may come from partial rather than failed retrievals and TOT states may indicate higher activation of target instead of just a failed retrieval
+    * heuristic-metacognitive account - focuses on what information is used to get to the TOT state, even information that is not directly related to the target (for example, syntactic and phonemic information, emotion)
+* past attempts at retrieving a target may influence TOT
 
 # Related Work
 
