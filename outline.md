@@ -30,9 +30,12 @@
 * as conclusion from memory frameworks, FOK should be dynamic
 * separate from search cost, from confidence of answer, from base "utility"/activation
 * we differentiated between steps so far and queries so far but did not use queries so far since all of our retrievals only used one query, but now we are using multiple retrieval strategies if one fails/ multiple queries can be done for one retrieval, so maybe this is worth looking into?
-* potential roles of FOK from <https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf>
+* potential uses of FOK from [Hanczakowski2014FeelingOfKnowing]
     * could be used for control as well as monitoring, as it was found that FOK influences restudy choices
     * FOKs may replace JOLs after failed a recall attempt
+        * the difference between these is unclear, and there mere separation of "at study time" versus "at retrieval time" seems arbitrary - does study not require retrieval for testing?
+* evidence that FOK is correlated with search termination reaction time if "don't know" ([Singer2008FeelingOfKnowing])
+    * in fact, termination RT is correlated with familiarity with topic
 
 # Modeling Framework
 
@@ -271,6 +274,7 @@ maybe unrelated things we mentioned that still seem interesting:
 [Burgess1996ConfabulationAndThe]: https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf
 [DeSoto2014PositiveAndNegative]: https://justinnhli.com/papers/d/DeSoto2014PositiveAndNegative.pdf
 [Florer2000FeelingsOfKnowing]: https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf
+[Hanczakowski2014FeelingOfKnowing]: https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf
 [Hanczakowski2017MetamemoryInA]: https://justinnhli.com/papers/h/Hanczakowski2017MetamemoryInA.pdf
 [Koriat1993HowDoWe]: https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
 [Koriat2001TheCombinedContributions]: https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
