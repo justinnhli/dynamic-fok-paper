@@ -10,6 +10,8 @@
 
 # situating within a strategic knowledge search framework
 
+* "[meta]cognitive-heuristic account of metacognitive judgments"
+    * [Schwartz2011TipOfThe] offers both psychological and neuro-imaging evidence for the cognitive-heuristic account, at least for TOTs
 * memory as a strategic process
     * knowledge search (Newell1972HumanProblemSolving)
     * "the Control of Recollection" ([Burgess1996ConfabulationAndThe])
@@ -69,6 +71,7 @@
             * the last four here might be related to Schwartz2014ContextualInformationInfluences
             * in that they are usual contextual knowledge
 * pre- and post-retrieval accounts ([Florer2000FeelingsOfKnowing]) muddled in dynamic FOK
+    * borrowing from TOT research, question of whether the same retrieval failure process leads to FOK, or if it's a post-hoc diagnostic process ([Schwartz2011TipOfThe])
 
 # FOK related work
 
@@ -286,6 +289,7 @@ maybe unrelated things we mentioned that still seem interesting:
 [Nelson2008TowardsARational]: https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
 [Salvucci2015EndowingACognitive]: https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
 [Schreiber1998TheRelationBetween]: https://justinnhli.com/papers/s/Schreiber1998TheRelationBetween.pdf
+[Schwartz2011TipOfThe]: https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf
 [Schwartz2014ContextualInformationInfluences]: https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf
 [Sharma2016ControllingSearchIn]: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
 [Widner1996TheEffectsOf]: https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf
