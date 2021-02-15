@@ -22,6 +22,12 @@
     * mostly addresses *external* sources of knowledge
     * no conception of search strategy
     * comparison with information scent
+* potential roles of FOK from <https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf>
+    * could be used for control as well as monitoring, as it was found that FOK influences restudy choices
+    * FOKs may replace JOLs after failed a recall attempt
+* what is the difference between "study time" and "test time" when it comes to JOL versus FOK?
+* FIXME
+    * Deliberate FOK versus automatic FOK
 * FIXME
     * [Nelson2008TowardsARational]
 
@@ -168,13 +174,21 @@
 * past FOKs?
 * used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
 
-# TOT states (I'm not sure where this should go)
+# TOT states
 <https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf>
 * approaches to understanding TOT:
     * direct access view - something blocks retrrieval so that the activation of the target is high enough to cause a TOT state, but too low for recall
     * two-step view - TOT may come from partial rather than failed retrievals and TOT states may indicate higher activation of target instead of just a failed retrieval
     * heuristic-metacognitive account - focuses on what information is used to get to the TOT state, even information that is not directly related to the target (for example, syntactic and phonemic information, emotion)
 * past attempts at retrieving a target may influence TOT
+
+# Partial Knowledge
+<https://justinnhli.com/papers/n/Norman2016TheRelationshipBetween.pdf>
+* past studies exploring the relationship between FOK and partial knowledge have measured FOK after retrieval of partial knowledge
+* this study measured FOK before a partial knowledge retrieval and found that FOK is still influenced by partial knowledge before it's recalled
+* FOKs are experience-based rather than just a measurement of retrieval speed or amount of partial information
+* correct partial knowledge was a predictor of FOK, while incorrect partial knowledge was not
+    * FOK increased with the amount of correct partial knowledge and the existence of incorrect partial knowledge
 
 # Related Work
 
