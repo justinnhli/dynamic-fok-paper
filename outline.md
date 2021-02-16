@@ -151,6 +151,10 @@
 * amount of info known about a result compared to everything else in memory
     * mention using average activation (or other summary statistics)
     * ex: when thinking of a country's capital, how well do you know the city you are thinking of compared to everything else you know?
+* accuracy of partial retrievals ([Norman2016TheRelationshipBetween])
+    * correct partial knowledge was a predictor of FOK, while incorrect partial knowledge was not
+    * FOK increased with the amount of correct partial knowledge and the existence of incorrect partial knowledge
+	* weird that the accuracy of the partial knowledge matters, since the participant doesn't know whether it's correct or not
 
 # complex/ conjugate features of FOK
 
@@ -174,24 +178,16 @@
 * past FOKs?
 * used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
 
-# TOT states
-<https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf>
-* approaches to understanding TOT:
-    * direct access view - something blocks retrrieval so that the activation of the target is high enough to cause a TOT state, but too low for recall
-    * two-step view - TOT may come from partial rather than failed retrievals and TOT states may indicate higher activation of target instead of just a failed retrieval
-    * heuristic-metacognitive account - focuses on what information is used to get to the TOT state, even information that is not directly related to the target (for example, syntactic and phonemic information, emotion)
-* past attempts at retrieving a target may influence TOT
 
-# Partial Knowledge
-<https://justinnhli.com/papers/n/Norman2016TheRelationshipBetween.pdf>
-* past studies exploring the relationship between FOK and partial knowledge have measured FOK after retrieval of partial knowledge
-* this study measured FOK before a partial knowledge retrieval and found that FOK is still influenced by partial knowledge before it's recalled
-* FOKs are experience-based rather than just a measurement of retrieval speed or amount of partial information
-* correct partial knowledge was a predictor of FOK, while incorrect partial knowledge was not
-    * FOK increased with the amount of correct partial knowledge and the existence of incorrect partial knowledge
 
 # Related Work
 
+* TOT states ([Schwartz2011TipOfThe])
+    * approaches to understanding TOT:
+        * direct access view - something blocks retrrieval so that the activation of the target is high enough to cause a TOT state, but too low for recall
+        * two-step view - TOT may come from partial rather than failed retrievals and TOT states may indicate higher activation of target instead of just a failed retrieval
+        * heuristic-metacognitive account - focuses on what information is used to get to the TOT state, even information that is not directly related to the target (for example, syntactic and phonemic information, emotion)
+    * past attempts at retrieving a target may influence TOT
 * (Unhelpful?) FOK related work
     * [Nelson1984AccuracyOfFeeling]
         * lists twelve potential mechanisms for FOK in the discussion
@@ -264,6 +260,7 @@ maybe unrelated things we mentioned that still seem interesting:
     * 28-39% false alarms for related lures
     * 10% false alarms for unrelated lures
 * [Hanczakowski2017MetamemoryInA]
+    * conclusion: any contextual effect on memory would could also have contextual effects on metamemory
     * experiments that assess role of factors that shape FOK judgments
     * Experiment 1: investigations of context effects in recognition
         * Involves participants studying cue-target pairs of words presented w/ photos
@@ -307,3 +304,4 @@ maybe unrelated things we mentioned that still seem interesting:
 [Schwartz2014ContextualInformationInfluences]: https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf
 [Sharma2016ControllingSearchIn]: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
 [Widner1996TheEffectsOf]: https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf
+[Norman2016TheRelationshipBetween]: https://justinnhli.com/papers/n/Norman2016TheRelationshipBetween.pdf
