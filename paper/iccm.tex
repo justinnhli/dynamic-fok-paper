@@ -1,0 +1,89 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{cogsci}
+\usepackage{apacite}
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[normalem]{ulem}
+
+\hyphenpenalty=1500
+\relpenalty=9999
+\binoppenalty=9999
+\hbadness=3500
+\vbadness=2000
+\frenchspacing
+
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+%\setlength{\abovecaptionskip}{0.5em}
+
+\newcommand{\comment}[1]{}
+
+% \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+\newcommand{\changed}[1]{#1}
+%\renewcommand{\changed}[1]{\textcolor{blue}{#1}}
+
+\comment{
+    \pdfinfo{
+        /Title (Towards a Computational Model of Feeling of Knowing)
+        /Subject (Proceedings of the 18\textsuperscript{th} International Conference on Cognitive Modeling)
+        /Author (Justin Li, Bryce Boyle)
+        /Keywords (Feeling of Knowing)
+    }
+
+    %\title{Towards a Computational Model of Feeling of Knowing}
+    
+    \author{
+        {\large \bf Justin Li (justinnhli@oxy.edu)} \\
+        {\large \bf Emma Kohanyi (kohanyi@oxy.edu)} \\
+        Occidental College, 1600 Campus Road \\
+        Los Angeles, CA 90041 USA
+    }
+}
+
+\pdfinfo{
+    /Title (Towards a Computational Model of Feeling of Knowing)
+    /Subject (Proceedings of the 18\textsuperscript{th} International Conference on Cognitive Modeling)
+    /Author (Justin Li, Bryce Boyle)
+    /Keywords (Feeling of Knowing)
+}
+
+\title{Towards a Computational Model of Feeling of Knowing}
+
+\author{
+    {\large \bf Anonymized}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+    \fixme{Lorum ipsum}
+
+    \textbf{Keywords:} Feeling of Knowing, Knowledge Search
+
+\end{abstract}
+
+\section{Introduction}
+
+Lorum ipsum \cite{Li2016ArchitecturalMechanismsFor}
+
+\bibliographystyle{apacite}
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+
+\bibliography{iccm}
+
+\end{document}
