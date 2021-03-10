@@ -288,20 +288,45 @@ maybe unrelated things we mentioned that still seem interesting:
 [Burgess1996ConfabulationAndThe]: https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf
 [DeSoto2014PositiveAndNegative]: https://justinnhli.com/papers/d/DeSoto2014PositiveAndNegative.pdf
 [Florer2000FeelingsOfKnowing]: https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf
+    * FOK is affected by memory processes that affect recall in the Ranschburg effect and aren't influenced by processes that affect recognition
+    * Ranschburg effect: when items that have been repeated during study are recalled poorly
 [Hanczakowski2014FeelingOfKnowing]: https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf
+    * people choose to restudy items with higher FOKs
+    * increased cue familiarity through priming increases FOK but doesn't affect recall
+    * higher FOK is a good indication that an item could be restudied and recalled successfully
+    * overall, FOK has an important role in control as well as monitoring
 [Hanczakowski2017MetamemoryInA]: https://justinnhli.com/papers/h/Hanczakowski2017MetamemoryInA.pdf
+    * FOK increases in familiar environmental contexts, especially when context for encoding both cue and target are the same
+    * this increased FOK does not lead to increased accuracy
+    * basically, any information can affect FOK regardless of whether it is related to the cue, target, or overall context
 [Koriat1993HowDoWe]: https://justinnhli.com/papers/k/Koriat1993HowDoWe.pdf
+    * cues can either be based on the accessibility of the target or based on the content of the information accessed
+    * FOK increases with increased accessibility (amount of information accessed and its intensity)
+    * early on in the memory search process FOK is likely based on accessibility alone
 [Koriat2001TheCombinedContributions]: https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
 [Li2012FunctionalInteractionsBetween]: https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
 [Li2016ArchitecturalMechanismsFor]: https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf
 [Mangan2000WhatFeelingIs]: https://justinnhli.com/papers/m/Mangan2000WhatFeelingIs.pdf
+    * FIXME
 [Nelson1984AccuracyOfFeeling]: https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf
+    * there is a positive relationship between length of memory search and magnitude of FOK
+    * this applies to unrecalled items where the person did not guess the answer, but not to unrecalled items where the wrong answer was guessed
 [Nelson1990MetamemoryATheoretical]: https://justinnhli.com/papers/n/Nelson1990MetamemoryATheoretical.pdf
+    * FOK is a part of a complex metamemory monitoring system
+    * it could be part of search strategy selection and search termination (taken from situating within a... section)
 [Nelson2008TowardsARational]: https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
 [Salvucci2015EndowingACognitive]: https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
 [Schreiber1998TheRelationBetween]: https://justinnhli.com/papers/s/Schreiber1998TheRelationBetween.pdf
+    * FOK should be inversely related to cue set size
+    * larger set sizes decrease FOK due to automatic, activation-based responses
 [Schwartz2011TipOfThe]: https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf
 [Schwartz2014ContextualInformationInfluences]: https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf
+    * magnitude of FOK is greater when more contextual information is given
 [Sharma2016ControllingSearchIn]: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
 [Widner1996TheEffectsOf]: https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf
+    * for participants told that questions would be difficult to answer, frequency of reported TOTs decreased
+    * demand characteristics had no effect on the frequency of reported FOKs or the accuracy of TOTs or FOKs
 [Norman2016TheRelationshipBetween]: https://justinnhli.com/papers/n/Norman2016TheRelationshipBetween.pdf
+    * (taken from FOK related work section)
+    * correct partial knowledge was a predictor of FOK, while incorrect partial knowledge was not
+    * FOK increased with the amount of correct partial knowledge and the existence of incorrect partial knowledge
