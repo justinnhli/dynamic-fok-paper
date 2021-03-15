@@ -3,7 +3,7 @@ LATEX = latexmk -pdf --shell-escape
 default: iccm.pdf
 
 iccm.pdf: Makefile *.tex
-	minbib iccm.tex > iccm.bib
+	#minbib iccm.tex > iccm.bib
 	$(LATEX) iccm
 
 clean:

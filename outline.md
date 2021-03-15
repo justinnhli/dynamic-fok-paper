@@ -226,6 +226,17 @@
         * Marapi Question:
             * for all FOK calculations except for one (outgoing edges FOK), FOK decreases as the answer is found (we had so many different retrieval steps for this question that i'm not even sure what FOK pattern we were expecting/ looking for)
 * unidirectional search vs multi-directional search
+* metrics used in related work:
+    * word sense disambiguation task: [Li2012FunctionalInteractionsBetween]
+        * tests how expensive, reliable (false positive/negatives) , and effective the model is
+    * partial match score: [Li2016ArchitecturalMechanismsFor]
+        * similarity between retrieved candidate and cue
+    * recognition tests: [DeSoto2014PositiveAndNegative]
+    * participants self-reporting their FOK: [Florer2000FeelingsOfKnowing]
+        * strings of letters or numbers (remembering the positions of certain characters within them)
+    * cued recall, self-reporting FOK, measuring accuracy, looking at restudy choices: [Hanczakowski2014FeelingOfKnowing]
+    * cued recall in various contexts: [Hanczakowski2017MetamemoryInA]
+        * cue-target pairs of words were studied along with a photograph (the “context”)
 
 -----
 
@@ -286,7 +297,9 @@ maybe unrelated things we mentioned that still seem interesting:
 
 
 [Burgess1996ConfabulationAndThe]: https://justinnhli.com/papers/b/Burgess1996ConfabulationAndThe.pdf
+    * focuses on the neuropsychology of confabulation and tests what elements of their model need to break in order to cause confabulation
 [DeSoto2014PositiveAndNegative]: https://justinnhli.com/papers/d/DeSoto2014PositiveAndNegative.pdf
+    * the relationship between confidence and accuracy was positive when material had been previously studied and negative or zero when the category had been studied but the actual information had not been
 [Florer2000FeelingsOfKnowing]: https://justinnhli.com/papers/f/Florer2000FeelingsOfKnowing.pdf
     * FOK is affected by memory processes that affect recall in the Ranschburg effect and aren't influenced by processes that affect recognition
     * Ranschburg effect: when items that have been repeated during study are recalled poorly
@@ -304,10 +317,17 @@ maybe unrelated things we mentioned that still seem interesting:
     * FOK increases with increased accessibility (amount of information accessed and its intensity)
     * early on in the memory search process FOK is likely based on accessibility alone
 [Koriat2001TheCombinedContributions]: https://justinnhli.com/papers/k/Koriat2001TheCombinedContributions.pdf
+    * the accessibility and cue familiarity hypotheses for FOK are not mutually exclusive
+    * they are two distinct processes that contribute to overall FOK separately
+    * cue familiarity determines initial FOK, then accessibility determines FOK throughout the rest of the search
 [Li2012FunctionalInteractionsBetween]: https://justinnhli.com/papers/l/Li2012FunctionalInteractionsBetween.pdf
+    * recognition judgements can be used to indicate potentially relevant knowledge efficiently
 [Li2016ArchitecturalMechanismsFor]: https://justinnhli.com/papers/l/Li2016ArchitecturalMechanismsFor.pdf
+    * semantic memory mechanisms are ongoing attempts to deal with uncertainty, error, and incompleteness in the agent’s knowledge
 [Mangan2000WhatFeelingIs]: https://justinnhli.com/papers/m/Mangan2000WhatFeelingIs.pdf
-    * FIXME
+    * "the feeling of knowing demands a search of all relevant nonconscious information"
+    * FOK is "the experience of rightness"
+    * "the nonconscious evaluative mechanism which actually 'compute' rightness at the preaccess stage is more limited than the processing that occurs once the word has become an explicit conscious content."
 [Nelson1984AccuracyOfFeeling]: https://justinnhli.com/papers/n/Nelson1984AccuracyOfFeeling.pdf
     * there is a positive relationship between length of memory search and magnitude of FOK
     * this applies to unrecalled items where the person did not guess the answer, but not to unrecalled items where the wrong answer was guessed
@@ -315,14 +335,21 @@ maybe unrelated things we mentioned that still seem interesting:
     * FOK is a part of a complex metamemory monitoring system
     * it could be part of search strategy selection and search termination (taken from situating within a... section)
 [Nelson2008TowardsARational]: https://justinnhli.com/papers/n/Nelson2008TowardsARational.pdf
+    * FOK of information is similar to the judgements about experiments discussed in the paper
+    * these judgements about the usefulness of the information are able to be made once 1) the usefulness of each answer is quantified and 2) each answer is weighted based on the question's usefulness
 [Salvucci2015EndowingACognitive]: https://justinnhli.com/papers/s/Salvucci2015EndowingACognitive.pdf
+    * even with a huge amount of knowledge, an agent can efficiently find information
+    * (need to read more into how this was done so quickly in the paper/ what metamemory processes aided search)
 [Schreiber1998TheRelationBetween]: https://justinnhli.com/papers/s/Schreiber1998TheRelationBetween.pdf
     * FOK should be inversely related to cue set size
     * larger set sizes decrease FOK due to automatic, activation-based responses
 [Schwartz2011TipOfThe]: https://justinnhli.com/papers/s/Schwartz2011TipOfThe.pdf
+    * heuristic-metacognitive view!
+        * "retrieved semantic, syntactic, and phonological information combines with other related information to inform a metacognitive monitor that retrieval of the word is likely" (740)
 [Schwartz2014ContextualInformationInfluences]: https://justinnhli.com/papers/s/Schwartz2014ContextualInformationInfluences.pdf
     * magnitude of FOK is greater when more contextual information is given
 [Sharma2016ControllingSearchIn]: https://justinnhli.com/papers/s/Sharma2016ControllingSearchIn.pdf
+    * agent uses decision trees (to lead search in the "right" direction) and statistical regression (to esitmate number of possible answers) for more efficient search of large knowledge bases
 [Widner1996TheEffectsOf]: https://justinnhli.com/papers/w/Widner1996TheEffectsOf.pdf
     * for participants told that questions would be difficult to answer, frequency of reported TOTs decreased
     * demand characteristics had no effect on the frequency of reported FOKs or the accuracy of TOTs or FOKs
