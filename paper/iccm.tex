@@ -10,9 +10,6 @@
 \usepackage{microtype}
 \usepackage[normalem]{ulem}
 
-\newcommand{\setof}[1]{\left \{ #1 \right \}}
-\newcommand{\tuple}[1]{\left \langle #1 \right \rangle }
-
 \hyphenpenalty=1500
 \relpenalty=9999
 \binoppenalty=9999
@@ -36,6 +33,11 @@
 
 \newcommand{\changed}[1]{#1}
 %\renewcommand{\changed}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\setof}[1]{\left \{ #1 \right \}}
+\newcommand{\tuple}[1]{\left \langle #1 \right \rangle }
+
+\newcommand{\question}[1]{\emph{``#1''}}
 
 \comment{
     \pdfinfo{
@@ -89,17 +91,51 @@ More recently, researchers have proposed the \emph{cognitive-heuristic account} 
 
 In parallel, the cognitive modeling community interested in modeling memory since the founding of the subfield.
 Cognitive architectures like ACT-R \cite{Anderson2007HowCanThe} in part grew out of early models of declarative memory \cite{Anderson1983ASpreadingActivation, Anderson1991ReflectionsOfThe}, and to this day the mechanisms of base-level activation and spreading activation remain deeply embedded within multiple architectures.
-While recognition and recall have been widely modeled, however, metamemory phenomena remain understudied, especially in the context of the broader strategic knowledge search \cite{Newell1990UnifiedTheoriesOf}.
-This paper therefore aims to complement existing literature by exploring how metacognitive judgment and control, and feelings of knowing in particular, might be modeled in a common model of cognitive architecture.
+While recognition and recall have been widely modeled, however, metamemory phenomena remain understudied, especially in the context of the broader strategic knowledge search \cite{Newell1972HumanProblemSolving}.
+This paper therefore aims to complement existing literature by exploring how metacognitive judgment and control, and feelings of knowing in particular, might be modeled in a common model of cognitive architecture \cite{Laird2017AStandardModel}.
 We begin by reviewing the literature on strategic knowledge search in order to place FOK in its ecological context, and identify a potential omission in our current understand of FOK.
 We then briefly summarize the representation of memory in ACT-R, before committing the bulk of this paper to considering different possible determinants of a computational FOK.
 Finally, we conclude by discussing how such a model of FOK might be evaluated, especially given the subjective nature of such judgments in the psychological literature.
 
 \section{Strategic Knowledge Search}
 
+Knowledge search is the process of finding knowledge that is relevant and could be applied to the current problem solving context \cite{Newell1972HumanProblemSolving}. % FIXME knowledge search is also mentioned in the Soar book; need to look up what it says as well
+Newell does not elaborate on the processes of knowledge search, and knowledge search has received scant exploration in contrast to problem space search.
+At the same time, there has been a slow trickle of psychological research on not just individual memory retrievals, but how people use their memory system as a whole, and how problem solving and decision processes are intertwined with memory.
+Experiments where subjects narrated their attempts at answering autobiographical questions, then elaborated on their thinking while listening to the recording, showed a rich landscape of memory processes \cite{Burgess1996ConfabulationAndThe}.
+Beyond the actual recollection of an event, subjects also described determining the recall specifications, gauging their own familiarity with the subject, relating multiple relevant memories, and verifying that a potential answer is in fact correct.
+Within psychology literature, a simplified version of this account is widely accepted, in that metacognitive judgments such as FOK are used for metacognitive control, such as selecting a search strategy and deciding whether to terminate search \cite{Nelson1990MetamemoryATheoretical}.
+Only more recently has the causal relationship between FOK and search terminal been empirically studied \cite{Singer2008FeelingOfKnowing}, or how FOK plays a role in which items a test-taker might revisit for further study \cite{Hanczakowski2014FeelingOfKnowing}.
+In sum, although strategic memory processes are \fixme[overusing generally, broadly, widely, etc. here]{generally} acknowledged to occur, neither psychology nor cognitive systems research has looked at how this broader context might inform our understanding of individual memory mechanisms.
 
+And yet, it is in the context of knowledge search that FOK must be understood.
+The cognitive-heuristic account of metamemory suggests that FOK guides memory retrieval, which in turn implies that it must provide meaningful information about the state and contents of memory. % FIXME something about signal to noise ratio here?
+% FIXME FOK is necessary because...
 
-\section{Modeling Definitions}
+% FIXME need to bring up the idea of multiple retrievals to answer a single question
+% because the next thing to suggest is that FOK is dynamic, and changes per retrieval
+One consequence of accepting knowledge search is the dissociation between a single memory retrieval with that of answering a question.
+Both semantic and episodic/autobiographical questions may in fact require multiple memory retrievals, not all of which may be relevant or return results.
+As an example, for a question like \question{What film was nominated for seven Academy Awards in 1999?}\footnote{Answer: \emph{Life is Beautiful}} \cite{Norman2016TheRelationshipBetween}, one might perform retrievals for general cultural events in 1999, famous directors and actors/actresses, generally acclaimed films, and so on.
+This account complicates the study of FOK: about \emph{which} question is the subject feeling that they know the answer to?
+When a subject reports their feeling of knowing, is it to the original question, or to any of the sub-questions that they ask themselves as they engage in the strategic search for the answer?
+
+Here we propose that the reported FOK is to the original question, and not to any of the other retrievals for the search process.
+This conclusion is more obvious for a question such as \question{What is the capital of Australia?}\footnote{Answer: Canberra}.
+Most people will suggest answers such as Sydney, Melbourne, and Brisbane before giving up, but despite these successful retrievals for Australian cities, will report that their FOK goes down over time before they terminate their search.
+That is, it seems clear to us that FOK is a \emph{dynamic} signal that changes throughout the strategic memory search process.
+This is also consistent with the cognitive-heuristic account of FOK: in order for FOK to be a reliable signal for search termination, it \emph{must} change over the course of the process to reflect whether an answer is still likely to be found.
+This stands in contrast to how FOK is usually studied: all psychological experiments we have been been able to find only solicit subjects' FOKs once, either before or after they are given the chance to attempt to answer the question. % FIXME are there studies that hint at the dynamic nature of FOK?
+While we have no doubt that such reports of FOK will still be correlated with the state of memory, ignoring the time course of FOK will likely omit crucial aspects of how the signal is cognitive determined.
+
+For the remainder of this paper, we will assume this dynamic view of FOK as we consider how FOK might be modeled computationally.
+
+% FIXME relation to information foraging theory
+% FIXME relation to information seeking behavior
+% FIXME Nelson2008TowardsARational
+% This pattern of strategic retrieval processes is also found in human information seeking behavior \cite{Marchionini1995InformationSeekingIn}, although to our knowledge no formal comparison of these models have been done.
+
+\section{Memory in the Common Model of Cognition}
 
 Formally, the contents of LTM is an edge-labeled directed graph, defined by:
 
