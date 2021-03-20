@@ -22,7 +22,7 @@
     * mostly addresses *external* sources of knowledge
     * no conception of search strategy
     * comparison with information scent
-* potential roles of FOK from <https://justinnhli.com/papers/h/Hanczakowski2014FeelingOfKnowing.pdf>
+* potential roles of FOK from [Hanczakowski2014FeelingOfKnowing]
     * could be used for control as well as monitoring, as it was found that FOK influences restudy choices
     * FOKs may replace JOLs after failed a recall attempt
 * what is the difference between "study time" and "test time" when it comes to JOL versus FOK?
