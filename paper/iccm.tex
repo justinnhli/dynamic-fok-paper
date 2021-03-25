@@ -37,7 +37,7 @@
 \newcommand{\setof}[1]{\left \{ #1 \right \}}
 \newcommand{\tuple}[1]{\left \langle #1 \right \rangle }
 
-\newcommand{\question}[1]{\emph{``#1''}}
+\newcommand{\question}[2]{\emph{``#1''}\footnote{Answer: #2}}
 
 \comment{
     \pdfinfo{
@@ -51,7 +51,7 @@
     
     \author{
         {\large \bf Justin Li (justinnhli@oxy.edu)} \\
-        {\large \bf Emma Kohanyi (kohanyi@oxy.edu)} \\
+        {\large \bf Bryce Boyle (bboyle@oxy.edu)} \\
         Occidental College, 1600 Campus Road \\
         Los Angeles, CA 90041 USA
     }
@@ -116,12 +116,12 @@ The cognitive-heuristic account of metamemory suggests that FOK guides memory re
 % because the next thing to suggest is that FOK is dynamic, and changes per retrieval
 One consequence of accepting knowledge search is the dissociation between a single memory retrieval with that of answering a question.
 Both semantic and episodic/autobiographical questions may in fact require multiple memory retrievals, not all of which may be relevant or return results.
-As an example, for a question like \question{What film was nominated for seven Academy Awards in 1999?}\footnote{Answer: \emph{Life is Beautiful}} \cite{Norman2016TheRelationshipBetween}, one might perform retrievals for general cultural events in 1999, famous directors and actors/actresses, generally acclaimed films, and so on.
+As an example, for a question like \question{What film was nominated for seven Academy Awards in 1999?}{\emph{Life is Beautiful}} \cite{Norman2016TheRelationshipBetween}, one might perform retrievals for general cultural events in 1999, famous directors and actors/actresses, generally acclaimed films, and so on.
 This account complicates the study of FOK: about \emph{which} question is the subject feeling that they know the answer to?
 When a subject reports their feeling of knowing, is it to the original question, or to any of the sub-questions that they ask themselves as they engage in the strategic search for the answer?
 
 Here we propose that the reported FOK is to the original question, and not to any of the other retrievals for the search process.
-This conclusion is more obvious for a question such as \question{What is the capital of Australia?}\footnote{Answer: Canberra}.
+This conclusion is more obvious for a question such as \question{What is the capital of Australia?}{Canberra}.
 Most people will suggest answers such as Sydney, Melbourne, and Brisbane before giving up, but despite these successful retrievals for Australian cities, will report that their FOK goes down over time before they terminate their search.
 That is, it seems clear to us that FOK is a \emph{dynamic} signal that changes throughout the strategic memory search process.
 This is also consistent with the cognitive-heuristic account of FOK: in order for FOK to be a reliable signal for search termination, it \emph{must} change over the course of the process to reflect whether an answer is still likely to be found.
@@ -132,25 +132,33 @@ For the remainder of this paper, we will assume this dynamic view of FOK as we c
 
 % FIXME relation to information foraging theory
 % FIXME relation to information seeking behavior
-% FIXME Nelson2008TowardsARational
+% FIXME \cite{Nelson2008TowardsARational}
 % This pattern of strategic retrieval processes is also found in human information seeking behavior \cite{Marchionini1995InformationSeekingIn}, although to our knowledge no formal comparison of these models have been done.
 
 \section{Memory in the Common Model of Cognition}
 
-Formally, the contents of LTM is an edge-labeled directed graph, defined by:
+The common model of cognition \cite{Laird2017AStandardModel} defines a set of representations and processes for modeling cognition, as implemented in cognitive architectures such as ACT-R and Soar \cite{Anderson2007HowCanThe,Laird2012TheSoarCognitive}.
+Of particular interest to this paper are the declarative long-term memory (LTM) processes, which we describe below.
 
-\begin{description}
-    \item[$S$]: the set of entities, which corresponds to the internal nodes of the graph;
-    \item[$P$] : the set of predicates, which corresponds to the edge labels of the graph;
-    \item[$L$] : the set of literals, such as numbers and strings, which corresponds to the leaf nodes of the graph;
-    \item[$E$] : the set of \emph{triples} $\tuple{S, P, S \cup L}$, which we will refer to as the \emph{subject}, the \emph{predicate}, and the \emph{object} respectively. These correspond to the directed edges of the graph.
-\end{description}
+Formally, the contents of LTM is an edge-labeled directed graph, defined by the tuple $\tuple{S, P, L, E}$:
+$S$ the set of entities, which corresponds to the internal nodes of the graph;
+$P$ the set of predicates, which corresponds to the edge labels of the graph;
+$L$ the set of literals, such as numbers and strings, which corresponds to the leaf nodes of the graph;
+and $E\subset S{\times}P{\times}O$, where $O=S \cup L$, the set of \emph{triples}, which correspond to the directed edges of the graph.
+For convenience, we will refer to the elements of a triple $\tuple{s, p, o}$ as the \emph{subject}, the \emph{predicate}, and the \emph{object} respectively.
 
-For convenience, we will denote the set of possible objects as $O = S \cup L$.
+When an agent retrieves from LTM, it must create a query $Q = \setof{q \in P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $\tuple{s, p, o} \in E \; \forall \tuple{p, o} \in Q$.
+If more than one such entity exists, the one with the highest \emph{base-level activation} is returned.
+Base-level activation is determined by $A(s) = \ln (\sum {t_i^{-d}})$, where $t_i$ is the time since the entity $s$ was last retrieved, and $d$ is the decay rate parameter.
+
+Within this framework, we are interested in exploring how existing hypothesized determinants of feelings of knowing might be calculated.
+The next section lists \fixme{10} \fixme{possible sources} of feeling of knowing.
+For each, we first discuss the relevant psychological literature, before evaluating how that may be translated computationally into a common model LTM.
+We leave the evaluation of these models to its own section afterwards.
 
 \section{Determinants of Feelings of Knowing}
 
-\section{Caveats}
+\section{Evaluating Feelings of Knowing}
 
 \section{General Discussion}
 
