@@ -157,6 +157,16 @@ For each, we first discuss the relevant psychological literature, before evaluat
 We leave the evaluation of these models to its own section afterwards.
 
 \section{Determinants of Feelings of Knowing}
+$TotalAvgNumEdges= \frac{|P|}{|S|}$
+
+\noindent$OutEdges(s) = \{p : \exists o{\in}O, <s, p, o>{\in}E \}$
+
+\noindent$$RelOutEdgesFOK(s) =
+\begin{cases}
+				\ln (\frac{|Out_Edges(s)|}{TotalAvgNumEdges}) & {if |Q| > 0} \\
+				\exists o{\in}O, \exists p{\in}P, <s, p, o>{\in}E, \ln(\frac{|OutEdges(o)|}{TotalAvgNumEdges}) & {if |Q| = 0} \\
+\end{cases}
+$$
 
 \section{Evaluating Feelings of Knowing}
 
