@@ -157,9 +157,37 @@ For each, we first discuss the relevant psychological literature, before evaluat
 We leave the evaluation of these models to its own section afterwards.
 
 \section{Determinants of Feelings of Knowing}
+\subsection{Absolute Activation FOK}
+% unsure if this is correct/ necessary
+$AbsoluteActivationFOK(s) = \sum {t_i^{-d}}$
+
+\subsection{Relative Activation FOK}
+$AvgActivationOfEverything= \frac {\sum\limits_{s: <s, p, o> \in E} {A(s)}}{|O|}$
+
+\noindent$$RelativeCueActivation(s) =
+\begin{cases}
+				0 & {if AvgActivationOfEverything = 0} \\
+				\ln(\frac{A(s)}{AvgActivationOfEverything}) & {if AvgActivationOfEverything \neq 0} \\
+\end{cases}
+$$
+
+\noindent$$RelativeTargetActivation(s) =
+\begin{cases}
+				0 & {if AvgActivationOfEverything = 0} \\
+				\exists o{\in}O, <s, p, o>{\in}E, \ln(\frac{A(o)}{AvgActivationOfEverything}) & {if AvgActivationOfEverything \neq 0, A(o) \neq 0} \\
+\end{cases}
+$$
+
+\noindent$$RelativeActivationFOK(s) =
+\begin{cases}
+				RelativeCueActivation(s) & {if |Q| > 0} \\
+				RelativeTargetActivation(s)& {if |Q| = 0} \\
+\end{cases}
+$$
+
 \subsection{Relative Outgoing Edges FOK}
 % does Q need to be defined in each equation before it is used?
-$TotalAvgNumEdges= \frac{|P|}{|S|}$
+$TotalAvgNumEdges = \frac{|P|}{|S|}$
 
 \noindent$OutEdges(s) = \{p : \exists o{\in}O, <s, p, o>{\in}E \}$
 
@@ -174,11 +202,10 @@ $$
 % I'm not sure if these sums are correct/ what should go on top
 \noindent$$Competition2FOK(s) =
 \begin{cases}
-				\exists o{\in}O, \frac{1}{\sum\limits_{p: <s, p, o> \in E} {|OutEdges(s)|}} & {if |Q| > 0} \\
-				\exists o{\in}O, \frac{1}{\sum\limits_{p: <s, p, o> \in E} {|OutEdges(o)|}} & {if |Q| = 0} \\
+				\exists o{\in}O, \frac{1}{\sum\limits_{s: <s, p, o> \in E} {|OutEdges(s)|}} & {if |Q| > 0} \\
+				\exists o{\in}O, \frac{1}{\sum\limits_{o: <s, p, o> \in E} {|OutEdges(o)|}} & {if |Q| = 0} \\
 \end{cases}
 $$
-
 
 
 \section{Evaluating Feelings of Knowing}
