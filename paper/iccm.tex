@@ -141,20 +141,31 @@ The common model of cognition \cite{Laird2017AStandardModel} defines a set of re
 Of particular interest to this paper are the declarative long-term memory (LTM) processes, which we describe below.
 
 Formally, the contents of LTM is an edge-labeled directed graph, defined by the tuple $\tuple{S, P, L, E}$:
-$S$ the set of entities, which corresponds to the internal nodes of the graph;
+$S$ the set of entities/concepts, which corresponds to the internal nodes of the graph;
 $P$ the set of predicates, which corresponds to the edge labels of the graph;
 $L$ the set of literals, such as numbers and strings, which corresponds to the leaf nodes of the graph;
 and $E\subset S{\times}P{\times}O$, where $O=S \cup L$, the set of \emph{triples}, which correspond to the directed edges of the graph.
 For convenience, we will refer to the elements of a triple $\tuple{s, p, o}$ as the \emph{subject}, the \emph{predicate}, and the \emph{object} respectively.
 
-When an agent retrieves from LTM, it must create a query $Q = \setof{q \in P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $\tuple{s, p, o} \in E \; \forall \tuple{p, o} \in Q$.
-If more than one such entity exists, the one with the highest \emph{base-level activation} is returned.
+An agent has two ways of getting knowledge from LTM.
+First, for any entity $s$, the agent can \emph{retrieve} all outgoing edges $\setof{\tuple{s, p, o}{\in}E}$ for which that entity is the subject.
+This mechanism is for accessing related information of a known concept, but to find an unknown concept that has certain properties, the agent must \emph{query} LTM instead.
+To do so, the agent must create a query \emph{cue} $Q = \setof{q \in P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $\tuple{s, p, o} \in E \; \forall \tuple{p, o} \in Q$.
+If more than one such entity exists, the entities with higher \emph{base-level activation} are preferentially returned.
 Base-level activation is determined by $A(s) = \ln (\sum {t_i^{-d}})$, where $t_i$ is the time since the entity $s$ was last retrieved, and $d$ is the decay rate parameter.
+Activation thus captures the recency and frequency of use of a concept, and is often used as a proxy of its relative importance to the agent.
 
-Within this framework, we are interested in exploring how existing hypothesized determinants of feelings of knowing might be calculated.
-The next section lists \fixme{10} \fixme{possible sources} of feeling of knowing.
-For each, we first discuss the relevant psychological literature, before evaluating how that may be translated computationally into a common model LTM.
-We leave the evaluation of these models to its own section afterwards.
+Within this framework, we can define the general process through which an FOK might be generated.
+When the agent is presented with a question, the agent would execute a sequence of queries and retrievals to LTM to attempt to answer the question.
+For clarity, we call the answer to the overarching question the \emph{target} of the question, while an individual query will have a \emph{result} (the entity that is returned) out of a set of \emph{potential results} (other entities that match the cue).
+Each query and retrieval executed by the agent will affect the agent's overall FOK towards the question.
+We are interested in the computational processes that occur at each query, and how they affect the overall FOK.
+
+% FIXME something about FOK as a by-product/observer process
+% as opposed to a different system separate from memory
+% Koriat1993HowDoWe
+
+\section{Psychological Determinants of FOK}
 
 
 \section{Psychological Determinants of FOK}
