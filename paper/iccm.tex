@@ -84,7 +84,7 @@
 
 \section{Introduction}
 
-\emph{Feelings of knowing} (FOKs) are a memory phenomenon in psychology where, despite not knowing the answer, the subject might \emph{feel} that they will be able to retrieve the answer with more thought.
+\emph{Feelings of knowing} (FOKs) are a memory phenomenon in psychology where, despite not knowing the answer to a question, the subject might \emph{feel} that they will be able to retrieve the answer with more thought.
 This and other metamemory phenomena, including \emph{tip-of-the-tongue states} and \emph{judgments of learning}, have long been studied as both a topic area of its own, as well as a way to gain insight into how memory is related to decision making \cite{Nelson1994WhyInvestigateMetacognition}.
 The psychology literature have focused on both the situations that lead to changes in FOKs, as well as the underlying determinants of the judgment.
 More recently, researchers have proposed the \emph{cognitive-heuristic account} of metamemory: that FOK serves the \emph{function} of guiding memory retrieval \cite{Schwartz2011TipOfThe}, and to allow early failure without expending retrieval resources if the probability of finding an answer is low.
@@ -160,6 +160,7 @@ When the agent is presented with a question, the agent would execute a sequence 
 For clarity, we call the answer to the overarching question the \emph{target} of the question, while an individual query will have a \emph{result} (the entity that is returned) out of a set of \emph{potential results} (other entities that match the cue).
 Each query and retrieval executed by the agent will affect the agent's overall FOK towards the question.
 We are interested in the computational processes that occur at each query, and how they affect the overall FOK.
+Without loss of generality, we further define the FOK to be a real number between -1 and 1; this allows the agent to understand whether an FOK is high or low in an absolute sense, without \fixme[I'm not sure how that would work]{the need for comparison against other FOKs}.
 
 % FIXME something about FOK as a by-product/observer process
 % as opposed to a different system separate from memory
@@ -173,6 +174,18 @@ For each, we first discuss the relevant psychological literature, before evaluat
 We leave the evaluation of these models to its own section afterwards.
 
 \subsection{Cue Familiarity}
+
+As the name implies, \emph{cue familiarity} as an account of FOK focuses on the 
+
+% FIXME should be a summary statistic of the objects in the cue - average? sum?
+
+\subsubsection{Activation}
+
+One possible metric for the familiarity of the cue is the activation of each individual object in the cue.
+
+% FIXME
+
+\subsubsection{Connectivity}
 
 \subsection{Accessibility}
 
@@ -248,13 +261,13 @@ $$
 % \cite{Nelson1984AccuracyOfFeeling}
 % \cite{Nelson1990MetamemoryATheoretical}
 % \cite{Nelson2008TowardsARational}
+% \cite{Norman2016TheRelationshipBetween}
 % \cite{Salvucci2015EndowingACognitive}
 % \cite{Schreiber1998TheRelationBetween}
 % \cite{Schwartz2011TipOfThe}
 % \cite{Schwartz2014ContextualInformationInfluences}
 % \cite{Sharma2016ControllingSearchIn}
 % \cite{Widner1996TheEffectsOf}
-% \cite{Norman2016TheRelationshipBetween}
 
 \bibliographystyle{apacite}
 
