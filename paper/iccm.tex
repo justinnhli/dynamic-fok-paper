@@ -141,16 +141,16 @@ The common model of cognition \cite{Laird2017AStandardModel} defines a set of re
 Of particular interest to this paper are the declarative long-term memory (LTM) processes, which we describe below.
 
 Formally, the contents of LTM is an edge-labeled directed graph, defined by the tuple $\tuple{S, P, L, E}$:
-$S$ the set of entities/concepts, which corresponds to the internal nodes of the graph;
+$S$ the set of entities or concepts (we use these terms interchangeably), which corresponds to the internal nodes of the graph;
 $P$ the set of predicates, which corresponds to the edge labels of the graph;
 $L$ the set of literals, such as numbers and strings, which corresponds to the leaf nodes of the graph;
-and $E\subset S{\times}P{\times}O$, where $O=S \cup L$, the set of \emph{triples}, which correspond to the directed edges of the graph.
+and $E{\subset}S{\times}P{\times}O$, where $O=S{\cup}L$, the set of \emph{triples}, which correspond to the directed edges of the graph from $s{\in}S$ to $o{\in}O$ with label $p{\in}P$.
 For convenience, we will refer to the elements of a triple $\tuple{s, p, o}$ as the \emph{subject}, the \emph{predicate}, and the \emph{object} respectively.
 
 An agent has two ways of getting knowledge from LTM.
 First, for any entity $s$, the agent can \emph{retrieve} all outgoing edges $\setof{\tuple{s, p, o}{\in}E}$ for which that entity is the subject.
 This mechanism is for accessing related information of a known concept, but to find an unknown concept that has certain properties, the agent must \emph{query} LTM instead.
-To do so, the agent must create a query \emph{cue} $Q = \setof{q \in P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $\tuple{s, p, o} \in E \; \forall \tuple{p, o} \in Q$.
+To do so, the agent must create a query \emph{cue} $Q = \setof{q{\in}P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $\tuple{s, p, o}{\in}E \; \forall \tuple{p, o}{\in}Q$.
 If more than one such entity exists, the entities with higher \emph{base-level activation} are preferentially returned.
 Base-level activation is determined by $A(s) = \ln (\sum {t_i^{-d}})$, where $t_i$ is the time since the entity $s$ was last retrieved, and $d$ is the decay rate parameter.
 Activation thus captures the recency and frequency of use of a concept, and is often used as a proxy of its relative importance to the agent.
@@ -175,17 +175,39 @@ We leave the evaluation of these models to its own section afterwards.
 
 \subsection{Cue Familiarity}
 
-As the name implies, \emph{cue familiarity} as an account of FOK focuses on the 
+As the name implies, the \emph{cue familiarity} account of FOK focuses on the contribution of the search cue to the feeling of knowing \cite{Reder1992WhatDeterminesInitial,Metcalfe1993TheCueFamiliarity,Koriat2001TheCombinedContributions}.
+For the purpose of this paper, we include all FOK determinants that are based on the semantic meaning of the cue, including familiarity and domain knowledge \cite{Schwartz1994SourcesOfInformation}.
+The intuition behind this account is that FOK is a summarization of the amount of knowledge the agent might have about the topic, as estimated from the terms of the question.
+The more the agent is familiar/knowledgeable about the concepts in the question, the more likely that they will know the answer, and therefore the higher the FOK.
 
-% FIXME should be a summary statistic of the objects in the cue - average? sum?
+From the computational standpoint, an FOK based on cue familiarity must be a function of the cue $Q = \setof{\tuple{p, o}{\in}P{\times}O}$.
+We consider two ways in which the ``familiarity'' of the cue is calculated as a summary statistic, either of the base-level activation of the objects in the cue, or of the connectivity of those objects.
+Although the choice of summary statistic may affect the FOK calculation --- the mean will be more sensitive to outlier values than the median, for example --- we consider this detail too low level for this paper, and will simply use $\phi$ to indicate that \fixme{it is a feature}.
+It is an open question whether other the distribution of the \fixme{values}, such as its variance, play a role in FOK.
 
 \subsubsection{Activation}
 
 One possible metric for the familiarity of the cue is the activation of each individual object in the cue.
+Since activation reflects the recency and frequency of \fixme{use} of a concept, this \fixme{calculation} therefore reflects how often the topic has arisen, hence the agent's familiarity with those concepts.
+Formally, this FOK is defined as:
 
-% FIXME
+$$\phi\left(A(o_1), A(o_2), ..., A(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
+
+An additional scaling factor, such as dividing by the sum or mean of all entities in LTM, may be necessary to \fixme{reduce the range of the result}.
 
 \subsubsection{Connectivity}
+
+In contrast to activation, connectivity captures how much knowledge the agent might have of each component of the cue.
+A concept in which an agent is knowledgeable would be connected to many other concepts, while a concept of which the agent is ignorant would only be sparsely connected.
+In the extreme, the simple presence or absence of the concept (i.e., whether the agent recognizes the concept) may be a sufficient signal to terminate search, and it has been shown that recognition is \fixme{beneficial} to knowledge search \cite{Li2012FunctionalInteractionsBetween}.
+
+The fan of a concept in LTM defines its connectivity, although variations on this metric is possible.
+First, it may be meaningful to only consider the fan-in or fan-out of the concept, which represent 
+Second, a broader sense of connectivity may be include not only the immediate neighbors of the concept, but neighbors up to some graph distance away (whose weight may be attenuated based on the inverse of that distance).
+Again, we leave these implementation details as future work, and leave the precise meaning of the $\text{fan}(s{\in}S)$ function undefined.
+Formally, this FOK is defined as:
+
+$$\phi\left(\text{fan}(o_1), \text{fan}(o_2), ..., \text{fan}(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
 
 \subsection{Accessibility}
 
@@ -198,7 +220,6 @@ One possible metric for the familiarity of the cue is the activation of each ind
 Relative Activation FOK measures how frequently and recently a node has been accessed compared to all other items in memory.
 
 $$\bar{A}_S = \frac {\sum_{s{\in}S} {A(s)}}{|S|}$$
-
 
 $$\text{RelCueActFOK}(Q) = \sum_{<p, s> \in Q} (s) \ln(\frac{A(s)}{\bar{A}_S})$$
 
@@ -239,7 +260,7 @@ Competition 2 FOK is based on the idea that the more possible right answers ther
 \end{cases}
 $$
 
-\section{Possible Computational Determinants of FOK}
+\section{The Computational Space of FOK Determinants}
 
 \section{Evaluating Feelings of Knowing}
 
@@ -264,6 +285,7 @@ $$
 % \cite{Norman2016TheRelationshipBetween}
 % \cite{Salvucci2015EndowingACognitive}
 % \cite{Schreiber1998TheRelationBetween}
+% \cite{Schwartz1994SourcesOfInformation}
 % \cite{Schwartz2011TipOfThe}
 % \cite{Schwartz2014ContextualInformationInfluences}
 % \cite{Sharma2016ControllingSearchIn}
