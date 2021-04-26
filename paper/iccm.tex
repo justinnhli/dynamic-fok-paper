@@ -174,6 +174,8 @@ Within the psychology literature, there are four main sources of FOK: cue famili
 For each, we first discuss the relevant psychological literature, before evaluating how that may be translated computationally into a common model LTM.
 We leave the evaluation of these models to its own section afterwards.
 
+\fixme{using cue familiarity first then accessibility for queries}
+
 \subsection{Cue Familiarity}
 
 As the name implies, the \emph{cue familiarity} account of FOK focuses on the contribution of the search cue to the feeling of knowing \cite{Reder1992WhatDeterminesInitial,Metcalfe1993TheCueFamiliarity,Koriat2001TheCombinedContributions}.
@@ -266,16 +268,16 @@ $$
 \begin{table*}[ht]
 \begin{tabular}{lllll}
                                 & Cues                                  & Cue Neighborhood                          & Result                              & Result Neighborhood                     \\ \cline{2-5} 
-\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{\cellcolor{gray!70}}    & \multicolumn{1}{l|}{}              & \multicolumn{1}{l|}{\cellcolor{gray!70}}  & \multicolumn{1}{l|}{}            \\ \cline{2-5} 
+\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{\cellcolor{gray!70}}    & \multicolumn{1}{l|}{(Cue Familiarity?)}              & \multicolumn{1}{l|}{\cellcolor{gray!70}}  & \multicolumn{1}{l|}{(Target Familiarity?)}            \\ \cline{2-5} 
 \multicolumn{1}{l|}{1/Number}   & \multicolumn{1}{l|}{\cellcolor{gray!70}}    & \multicolumn{1}{l|}{}              & \multicolumn{1}{l|}{\cellcolor{gray!70}}  & \multicolumn{1}{l|}{Competition}            \\ \cline{2-5} 
-\multicolumn{1}{l|}{Activation} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Cue Familiarity} & \multicolumn{1}{l|}{Accessibility} & \multicolumn{1}{l|}{} \\ \cline{2-5} 
+\multicolumn{1}{l|}{Activation} & \multicolumn{1}{l|}{\cellcolor{black}} & \multicolumn{1}{l|}{Cue Familiarity} & \multicolumn{1}{l|}{Accessibility} & \multicolumn{1}{l|}{(Target Familiarity?)} \\ \cline{2-5} 
 \end{tabular}
 \end{table*}
 
 \begin{table*}[ht]
 \begin{tabular}{lllll}
                                 & Candidates               & Candidate Neighborhood             & Retrieval                                & Retrieval Neighborhood       \\ \cline{2-5} 
-\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{Accessibility?} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\cellcolor{gray!70}}       & \multicolumn{1}{l|}{} \\ \cline{2-5} 
+\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{Accessibility?} & \multicolumn{1}{l|}{(Aren't candidate children just retrievals?)} & \multicolumn{1}{l|}{\cellcolor{gray!70}}       & \multicolumn{1}{l|}{} \\ \cline{2-5} 
 \multicolumn{1}{l|}{1/Number}   & \multicolumn{1}{l|}{Competition?} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\cellcolor{gray!70}}       & \multicolumn{1}{l|}{Competition} \\ \cline{2-5} 
 \multicolumn{1}{l|}{Activation} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Accessibility} & \multicolumn{1}{l|}{} \\ \cline{2-5} 
 \end{tabular}
@@ -286,7 +288,26 @@ $$
 
 \section{(Temp Section for Dynamic FOK)}
 
+For relative activation, outgoing edges, activation over edges 2,  competition 2, and absolute activation FOKs, calculations were made based on the cue for queries and the target for retrievals.
 
+For the historic FOK calculation, we first calculated the weighted average of past FOKs (gamma of 0.48), found the new differences between the most recent FOK and the previous one, then took another weighted averages of these new differences. (The comments in the code are unclear and some of it looks wrong? So it might be worth looking at again. I also have no idea why we chose a gamma of 0.48)
+
+* pre- and post-retrieval accounts ([Florer2000FeelingsOfKnowing]) muddled in dynamic FOK
+
+
+    * borrowing from TOT research, question of whether the same retrieval failure process leads to FOK, or if it's a post-hoc diagnostic process ([Schwartz2011TipOfThe])
+   
+   
+* Koriat classifies it as an "inferential mechanism"; may not be a simple signal?
+
+
+            * also hints at dynamic nature - by definition, depends on what results have come back, and will change over time
+
+            
+* we used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
+
+
+* historic FOK
 
 \section{General Discussion}
 
