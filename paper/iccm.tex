@@ -178,9 +178,36 @@ Without loss of generality, we further define the FOK to be a real number betwee
 This section explores how existing hypothesized determinants of feelings of knowing might be calculated within the common model.
 Within the psychology literature, there are four main sources of FOK: cue familiarity, accessibility, competition, and partial information.
 For each, we first discuss the relevant psychological literature, before evaluating how that may be translated computationally into a common model LTM.
+A summary of these determinants can be found in Table \ref{determinants}.
 We leave the evaluation of these models to its own section afterwards.
 
-\fixme{using cue familiarity first then accessibility for queries}
+\begin{table*}[ht]
+\begin{tabular}{c|cccccc}
+\whitecell           &  \tableheader{Cues}  &  \textbf{Cue}           &  \tableheader{Candidates}  &  \textbf{Candidate}      &  \tableheader{Result}  &  \textbf{Result}        \\  
+\whitecell           &  \whitecell          &  \textbf{Neighborhood}  &  \whitecell                &  \textbf{Neighborhoods}  &  \whitecell            &  \textbf{Neighborhood}  \\  
+\hline                                                                                                                                                                               
+\textbf{Count}       &  \graycell           &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Result Familiarity     \\  
+\textbf{1/Count}     &  \graycell           &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
+\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  \whitecell                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
+\end{tabular}
+
+% \begin{tabular}{c|cc}
+% \whitecell           &  \tableheader{Retrieval}  &  \textbf{Retrieval}     \\  
+% \whitecell           &  \whitecell               &  \textbf{Neighborhood}  \\  
+% \hline                                                                         
+% \textbf{Number}      &  \graycell                &  \whitecell             \\  
+% \textbf{1/Number}    &  \graycell                &  Competition            \\  
+% \textbf{Activation}  &  Accessibility            &  \whitecell             \\  
+% \end{tabular}
+
+\caption{
+    Difference sources of information for calculating FOK, and which corresponding psychology FOK theory they belong in.
+    Black cells represent sources that do not exist (e.g., the activation of the retrieval cues);
+    gray out cells represent sources that exist but not meaningful for FOK (e.g. the number of retrieval cues);
+    and white cells represent sources that exist and may be meaningful, but are unexplored in the literature.
+}
+\label{determinants}
+\end{table*}
 
 \subsection{Cue Familiarity}
 
@@ -271,33 +298,6 @@ $$
 
 \section{The Computational Space of FOK Determinants}
 
-\begin{table*}[ht]
-\begin{tabular}{c|cccccc}
-\whitecell           &  \tableheader{Cues}  &  \textbf{Cue}           &  \tableheader{Candidates}  &  \textbf{Candidate}      &  \tableheader{Result}  &  \textbf{Result}        \\  
-\whitecell           &  \whitecell          &  \textbf{Neighborhood}  &  \whitecell                &  \textbf{Neighborhoods}  &  \whitecell            &  \textbf{Neighborhood}  \\  
-\hline                                                                                                                                                                               
-\textbf{Count}       &  \graycell           &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Result Familiarity     \\  
-\textbf{1/Count}     &  \graycell           &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
-\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  \whitecell                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
-\end{tabular}
-
-% \begin{tabular}{c|cc}
-% \whitecell           &  \tableheader{Retrieval}  &  \textbf{Retrieval}     \\  
-% \whitecell           &  \whitecell               &  \textbf{Neighborhood}  \\  
-% \hline                                                                         
-% \textbf{Number}      &  \graycell                &  \whitecell             \\  
-% \textbf{1/Number}    &  \graycell                &  Competition            \\  
-% \textbf{Activation}  &  Accessibility            &  \whitecell             \\  
-% \end{tabular}
-
-\caption{
-    Difference sources of information for calculating FOK, and which corresponding psychology FOK theory they belong in.
-    Black cells represent sources that do not exist (e.g., the activation of the retrieval cues);
-    gray out cells represent sources that exist but not meaningful for FOK (e.g. the number of retrieval cues);
-    and white cells represent sources that exist and may be meaningful, but are unexplored in the literature.
-}
-\label{determinants}
-\end{table*}
 
 		
 \section{Evaluating Feelings of Knowing}
