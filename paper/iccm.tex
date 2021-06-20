@@ -8,6 +8,7 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{graphicx}
 \usepackage{microtype}
+\usepackage{multirow}
 \usepackage[normalem]{ulem}
 \usepackage[table]{xcolor}
 
@@ -34,6 +35,11 @@
 
 \newcommand{\changed}[1]{#1}
 %\renewcommand{\changed}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\tableheader}[1]{\multirow{2}{*}{\textbf{#1}}}
+\newcommand{\whitecell}[0]{}
+\newcommand{\graycell}[0]{\cellcolor{gray!70}}
+\newcommand{\blackcell}[0]{\cellcolor{black}}
 
 \newcommand{\setof}[1]{\left \{ #1 \right \}}
 \newcommand{\tuple}[1]{\left \langle #1 \right \rangle }
@@ -266,21 +272,31 @@ $$
 \section{The Computational Space of FOK Determinants}
 
 \begin{table*}[ht]
-\begin{tabular}{lllll}
-                                & Cues                                  & Cue Neighborhood                          & Result                              & Result Neighborhood                     \\ \cline{2-5} 
-\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{\cellcolor{gray!70}}    & \multicolumn{1}{l|}{(Cue Familiarity?)}              & \multicolumn{1}{l|}{\cellcolor{gray!70}}  & \multicolumn{1}{l|}{(Target Familiarity?)}            \\ \cline{2-5} 
-\multicolumn{1}{l|}{1/Number}   & \multicolumn{1}{l|}{\cellcolor{gray!70}}    & \multicolumn{1}{l|}{}              & \multicolumn{1}{l|}{\cellcolor{gray!70}}  & \multicolumn{1}{l|}{Competition}            \\ \cline{2-5} 
-\multicolumn{1}{l|}{Activation} & \multicolumn{1}{l|}{\cellcolor{black}} & \multicolumn{1}{l|}{Cue Familiarity} & \multicolumn{1}{l|}{Accessibility} & \multicolumn{1}{l|}{(Target Familiarity?)} \\ \cline{2-5} 
+\begin{tabular}{c|cccccc}
+\whitecell           &  \tableheader{Cues}  &  \textbf{Cue}           &  \tableheader{Candidates}  &  \textbf{Candidate}      &  \tableheader{Result}  &  \textbf{Result}        \\  
+\whitecell           &  \whitecell          &  \textbf{Neighborhood}  &  \whitecell                &  \textbf{Neighborhoods}  &  \whitecell            &  \textbf{Neighborhood}  \\  
+\hline                                                                                                                                                                               
+\textbf{Count}       &  \graycell           &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Result Familiarity     \\  
+\textbf{1/Count}     &  \graycell           &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
+\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  \whitecell                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
 \end{tabular}
-\end{table*}
 
-\begin{table*}[ht]
-\begin{tabular}{lllll}
-                                & Candidates               & Candidate Neighborhood             & Retrieval                                & Retrieval Neighborhood       \\ \cline{2-5} 
-\multicolumn{1}{l|}{Number}     & \multicolumn{1}{l|}{Accessibility?} & \multicolumn{1}{l|}{(Aren't candidate children just retrievals?)} & \multicolumn{1}{l|}{\cellcolor{gray!70}}       & \multicolumn{1}{l|}{} \\ \cline{2-5} 
-\multicolumn{1}{l|}{1/Number}   & \multicolumn{1}{l|}{Competition?} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\cellcolor{gray!70}}       & \multicolumn{1}{l|}{Competition} \\ \cline{2-5} 
-\multicolumn{1}{l|}{Activation} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Accessibility} & \multicolumn{1}{l|}{} \\ \cline{2-5} 
-\end{tabular}
+% \begin{tabular}{c|cc}
+% \whitecell           &  \tableheader{Retrieval}  &  \textbf{Retrieval}     \\  
+% \whitecell           &  \whitecell               &  \textbf{Neighborhood}  \\  
+% \hline                                                                         
+% \textbf{Number}      &  \graycell                &  \whitecell             \\  
+% \textbf{1/Number}    &  \graycell                &  Competition            \\  
+% \textbf{Activation}  &  Accessibility            &  \whitecell             \\  
+% \end{tabular}
+
+\caption{
+    Difference sources of information for calculating FOK, and which corresponding psychology FOK theory they belong in.
+    Black cells represent sources that do not exist (e.g., the activation of the retrieval cues);
+    gray out cells represent sources that exist but not meaningful for FOK (e.g. the number of retrieval cues);
+    and white cells represent sources that exist and may be meaningful, but are unexplored in the literature.
+}
+\label{determinants}
 \end{table*}
 
 		
