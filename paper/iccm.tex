@@ -247,11 +247,7 @@ $$\phi\left(\text{fan}(o_1), \text{fan}(o_2), ..., \text{fan}(o_n)\right) \; \fo
 
 \subsection{Accessibility}
 
-\subsection{Competition}
-
-\subsection{Partial Retrieval}
-
-\subsection{Relative Activation FOK}
+\subsubsection{Activation}
 
 Relative Activation FOK measures how frequently and recently a node has been accessed compared to all other items in memory.
 
@@ -268,7 +264,7 @@ $$\text{RelActFOK}(Q, s) =
 \end{cases}
 $$
 
-\subsection{Relative Outgoing Edges FOK}
+\subsubsection{Connectivity}
 
 Relative Outgoing Edges FOK measures how much more is known about the cue compared to all other items in memory, where “how much is known” is determined by the number of outgoing edges from a node.
 
@@ -284,8 +280,6 @@ $$RelOutEdgesFOK(s) =
 \end{cases}
 $$
 
-\subsection{Competition 2 FOK}
-
 (From [Schreiber1998TheRelationBetween])
 Competition 2 FOK is based on the idea that the more possible right answers there are, the more distractors there will be, making it more difficult to identify the correct answer. So, in contrast to Outgoing Edges FOK, the more outgoing edges from a node the lower the FOK.
 % I'm not sure if these sums are correct/ what should go on top
@@ -296,34 +290,34 @@ Competition 2 FOK is based on the idea that the more possible right answers ther
 \end{cases}
 $$
 
+\subsubsection{Content}
+
+\subsubsection{Partial Retrieval}
+
+Note: not current possible in ACT-R
+
+\subsection{Competition}
+
 \section{The Computational Space of FOK Determinants}
 
+mixing previous determinants
 
-		
-\section{Evaluating Feelings of Knowing}
+\section{Dynamic FOK}
 
-\section{(Temp Section for Dynamic FOK)}
+borrowing from TOT research, question of whether the same retrieval failure process leads to FOK, or if it's a post-hoc diagnostic process ([Schwartz2011TipOfThe])
+pre- and post-retrieval accounts ([Florer2000FeelingsOfKnowing]) muddled in dynamic FOK
 
-For relative activation, outgoing edges, activation over edges 2,  competition 2, and absolute activation FOKs, calculations were made based on the cue for queries and the target for retrievals.
+\subsubsection{Result-based Determinants}
+
+\subsubsection{State-State-based Determinants}
+
+For relative activation, outgoing edges, activation over edges 2, competition 2, and absolute activation FOKs, calculations were made based on the cue for queries and the target for retrievals.
 
 For the historic FOK calculation, we first calculated the weighted average of past FOKs (gamma of 0.48), found the new differences between the most recent FOK and the previous one, then took another weighted averages of these new differences. (The comments in the code are unclear and some of it looks wrong? So it might be worth looking at again. I also have no idea why we chose a gamma of 0.48)
 
-* pre- and post-retrieval accounts ([Florer2000FeelingsOfKnowing]) muddled in dynamic FOK
+we used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
 
-
-    * borrowing from TOT research, question of whether the same retrieval failure process leads to FOK, or if it's a post-hoc diagnostic process ([Schwartz2011TipOfThe])
-   
-   
-* Koriat classifies it as an "inferential mechanism"; may not be a simple signal?
-
-
-            * also hints at dynamic nature - by definition, depends on what results have come back, and will change over time
-
-            
-* we used different FOK calculations based on where in the retrieval process the FOK occurred (using one method for a query and another method for subsequent retrievals)
-
-
-* historic FOK
+\section{Evaluating Feelings of Knowing}
 
 \section{General Discussion}
 
