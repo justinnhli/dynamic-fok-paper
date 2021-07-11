@@ -192,7 +192,7 @@ We leave the evaluation of these models to its own section afterwards.
 \hline                                                                                                                                                                               
 \textbf{Count}       &  \graycell           &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Result Familiarity     \\  
 \textbf{1/Count}     &  \graycell           &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
-\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  \whitecell                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
+\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  Competition (?)                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
 \end{tabular}
 
 % \begin{tabular}{c|cc}
@@ -298,16 +298,6 @@ $$RelOutEdgesFOK(s) =
 \end{cases}
 $$
 
-(From [Schreiber1998TheRelationBetween])
-Competition 2 FOK is based on the idea that the more possible right answers there are, the more distractors there will be, making it more difficult to identify the correct answer. So, in contrast to Outgoing Edges FOK, the more outgoing edges from a node the lower the FOK.
-% I'm not sure if these sums are correct/ what should go on top
-\noindent$$Competition2FOK(s) =
-\begin{cases}
-    \exists o{\in}O, \frac{1}{\sum\limits_{s: <s, p, o> \in E} {|OutEdges(s)|}} & {if |Q| > 0} \\
-    \exists o{\in}O, \frac{1}{\sum\limits_{o: <s, p, o> \in E} {|OutEdges(o)|}} & {if |Q| = 0} \\
-\end{cases}
-$$
-
 \subsubsection{Content}
 
 \subsubsection{Partial Retrieval}
@@ -317,6 +307,28 @@ Note: not current possible in ACT-R
 \subsection{Competition}
 
 could in theory be considered under accessibility
+
+Looking at connectivity from a different perspective, the competition hypothesis of feeling of knowing views more results as a contributor to a lower FOK \cite{Schreiber1998TheRelationBetween}. Competition 2 FOK is based on the idea that the more possible right answers there are, the more distractors there will be, making it more difficult for the agent to identify the correct answer. So, in contrast to Outgoing Edges FOK, the more outgoing edges from a node the lower the FOK.
+% I'm not sure if these sums are correct/ what should go on top
+\noindent$$Competition2FOK(s) =
+\begin{cases}
+    \exists o{\in}O, \frac{1}{\sum\limits_{s: <s, p, o> \in E} {|OutEdges(s)|}} & {if |Q| > 0} \\
+    \exists o{\in}O, \frac{1}{\sum\limits_{o: <s, p, o> \in E} {|OutEdges(o)|}} & {if |Q| = 0} \\
+\end{cases}
+$$
+
+\subsection{Inverse? Connectivity}
+
+\subsubsection{Candidates}
+A possible determinant for competition FOK is the inverse of the connectivity of candidates returned by a query. FOK would then be low when a large number of items are found from a query, since the chance of finding the correct node out of the many candidates is low.
+
+
+\subsubsection{Result Neighborhood}
+Another way competition may be represented is through the inverse of the connectivity of the nodes that surround the result of a retrieval. Again, the more nodes there are to distract from the correct result, the lower the FOK.
+
+\subsection{Activation}
+	Activation of candidates alone may also be a form of competition FOK. If all query candidates have similar activations, or higher activations than the desired node, this creates competition between them and the correct node is less likely to be retrieved.
+
 
 \section{The Computational Space of FOK Sources}
 
