@@ -87,7 +87,7 @@
 
     \fixme{Lorum ipsum}
 
-    \textbf{Keywords:} Feeling of Knowing, Knowledge Search
+    \textbf{Keywords:} Feeling of Knowing; Knowledge Search
 
 \end{abstract}
 
@@ -102,8 +102,8 @@ More recently, researchers have proposed the \emph{cognitive-heuristic account} 
 
 In parallel, the cognitive modeling community interested in modeling memory since the founding of the subfield.
 Cognitive architectures like ACT-R \cite{Anderson2007HowCanThe} in part grew out of early models of declarative memory \cite{Anderson1983ASpreadingActivation, Anderson1991ReflectionsOfThe}, and to this day the mechanisms of base-level activation and spreading activation remain deeply embedded within multiple architectures.
-While recognition and recall have been widely modeled, however, metamemory phenomena remain understudied, especially in the context of the broader strategic knowledge search \cite{Newell1972HumanProblemSolving}.
-This paper therefore aims to complement existing literature by exploring how metacognitive judgment and control, and feelings of knowing in particular, might be modeled in a common model of cognitive architecture \cite{Laird2017AStandardModel}.
+While recognition and recall have been widely modeled, however, metamemory phenomena remain understudied, especially in the context of broader strategic knowledge search \cite{Newell1972HumanProblemSolving}.
+This paper therefore aims to complement existing literature by exploring how metacognitive judgment and control, and feelings of knowing in particular, might be instantiated in a common model of cognitive architecture \cite{Laird2017AStandardModel}.
 We begin by reviewing the literature on strategic knowledge search in order to place FOK in its ecological context, and identify a potential omission in our current understand of FOK.
 We then briefly summarize the representation of memory in ACT-R, before committing the bulk of this paper to considering different possible sources of a computational FOK.
 Finally, we conclude by discussing how such a model of FOK might be evaluated, especially given the subjective nature of such judgments in the psychological literature.
@@ -230,7 +230,7 @@ The more the agent is familiar/knowledgeable about the concepts in the question,
 From the computational standpoint, an FOK based on cue familiarity must be a function of the cue $Q = \setof{\tuple{p, o}{\in}P{\times}O}$.
 We consider two ways in which the ``familiarity'' of the cue is calculated as a summary statistic, either of the base-level activation of the objects in the cue, or of the connectivity of those objects.
 Although the choice of summary statistic may affect the FOK calculation --- the mean will be more sensitive to outlier values than the median, for example --- we consider this detail too low level for this paper, and will simply use $\phi$ to indicate that \fixme{it is a feature}.
-It is an open question whether other the distribution of the \fixme{values}, such as its variance, play a role in FOK.
+It is an open question whether other summaries of the distribution of the \fixme{values}, such as its variance, play a role in FOK.
 
 \subsubsection{Activation}
 
@@ -251,7 +251,7 @@ In the extreme, the simple presence or absence of the concept (i.e., whether the
 
 The fan of a concept in LTM defines its connectivity, although variations on this metric is possible.
 First, it may be meaningful to only consider the fan-in or fan-out of the concept, which represent \fixme{FIXME}.
-Second, a broader sense of connectivity may be include not only the immediate neighbors of the concept, but neighbors up to some graph distance away (whose weight may be attenuated based on the inverse of that distance).
+Second, a broader sense of connectivity may include not only the immediate neighbors of the concept, but neighbors up to some graph distance away (whose weight may be attenuated based on the inverse of that distance).
 Again, we leave these implementation details as future work, and leave the precise meaning of the $\text{fan}(s{\in}S)$ function undefined.
 Formally, this FOK is defined as:
 
@@ -282,7 +282,7 @@ Instead of using the raw activation value of the result of a retrieval, we norma
 $$\fok = \fok(s) = \ln(\frac{A(s)}{\bar{A}_S})$$
 where $\bar{A}_S$ is the average activation. % FIXME meaningful to talk about other summary statistics, e.g., \phi{a_s} instead of \bar{a_s}?
 The intuition is that the agent is evaluating the relative importance of this result against other potential results.
-By this reasoning, however, average other different sets of contexts may be possible; an argument could be made for only normalizing against other entities that match the query, $S_Q$.
+By this reasoning, however, the average of different sets of contexts may be possible; an argument could be made for only normalizing against other entities that match the query, $S_Q$.
 While this formulation may not be meaningful for architectures that always retrieve the most highly activated entity that matches the query, the introduction of noise or other ranking metrics may lead to different FOK behavior.
 
 % Relative Activation FOK measures how frequently and recently a node has been accessed compared to all other items in memory.
@@ -398,7 +398,7 @@ The possibility of multiple retrievals that occur in sequence also muddle the di
 This in fact makes the hybrid account of FOK more parsimonious, as it is not that different sources are used in at different points of problem solving, but that the targets \emph{becomes} cues as multiple retrievals occur.
 
 % what does this mean for existing sources?
-A dynamic FOK has implications not just for which sources are dominate (if they are indeed different sources at all), but what information each source provides.
+A dynamic FOK has implications not just for which sources dominate (if they are indeed different sources at all), but what information each source provides.
 During the course of problem solving, the activation of entities will change based on the results of previous retrievals.
 A cue that initially had low activation may be boosted if multiple retrieval results are linked to it by chance; conversely, previously highly activated entities may become less so over time.
 While the connectivity of entities is less affected by retrievals, it is also not impossible that new connections between entities could be made during problem solving, say if someone realizes that blue whales are not fish in answering \question{What is the largest fish on earth?}{Whale sharks}.
@@ -409,7 +409,7 @@ Mathematically, we might consider each source to be a function of time, $\fok_t$
 This formulation allows for \emph{previous values} of FOK to serve as a source of FOK.
 Consider again the question of what is the capital of Australia. % FIXME this example is not great, since both activation and recursive FOK is dropping; is there a case where a "plain" determinant rises but FOK trends down? is that a contradiction?
 One plausible model of how FOK changes is that it is based on the activation of each retrieval result (as per the accessibility account), due to higher activation cities being retrieved first.
-This effect, however, may be compounded by how FOK has been trending down; that is, since $\fok(3) > \fok(2) > \fok(1)$, the agent concludes that they are unlikely to know the answer and thereby terminates the search.
+This effect, however, may be compounded by how FOK has been trending down; that is, since $\fok_3 > \fok_2 > \fok_1$, the agent concludes that they are unlikely to know the answer and thereby terminates the search.
 More generally, this raises the possibility that FOK is defined as a function of its own history:
 $$\fok = f(\fok_1, ..., \fok_T) = $$
 up to some time $T$ in the past.
