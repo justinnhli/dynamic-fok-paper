@@ -1,3 +1,22 @@
+% 
+% Annual Cognitive Science Conference
+% Sample LaTeX Paper -- Proceedings Format
+% 
+
+% Original : Ashwin Ram (ashwin@cc.gatech.edu)       04/01/1994
+% Modified : Johanna Moore (jmoore@cs.pitt.edu)      03/17/1995
+% Modified : David Noelle (noelle@ucsd.edu)          03/15/1996
+% Modified : Pat Langley (langley@cs.stanford.edu)   01/26/1997
+% Latex2e corrections by Ramin Charles Nakisa        01/28/1997 
+% Modified : Tina Eliassi-Rad (eliassi@cs.wisc.edu)  01/31/1998
+% Modified : Trisha Yannuzzi (trisha@ircs.upenn.edu) 12/28/1999 (in process)
+% Modified : Mary Ellen Foster (M.E.Foster@ed.ac.uk) 12/11/2000
+% Modified : Ken Forbus                              01/23/2004
+% Modified : Eli M. Silk (esilk@pitt.edu)            05/24/2005
+% Modified : Niels Taatgen (taatgen@cmu.edu)         10/24/2006
+% Modified : David Noelle (dnoelle@ucmerced.edu)     11/19/2014
+% Modified : Roger Levy (rplevy@mit.edu)             12/31/2018
+
 \documentclass[10pt,letterpaper]{article}
 
 \usepackage{cogsci}
@@ -28,7 +47,7 @@
 
 \newcommand{\comment}[1]{}
 
-% \fixme[comments describing issue]{text to be fixed}
+% usage: \fixme[comments describing issue]{text to be fixed}
 % define \fixme as not doing anything special
 \newcommand{\fixme}[2][]{#2}
 % overwrite it so it shows up as red
@@ -36,8 +55,9 @@
 % overwrite it again so related text shows as footnotes
 %\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
 
-\newcommand{\changed}[1]{#1}
-%\renewcommand{\changed}[1]{\textcolor{blue}{#1}}
+\newcommand{\textcite}[1]{\citeauthor{#1} \citeyear{#1}}
+
+\newcommand{\negsub}[0]{\;\!^{\_}}
 
 \newcommand{\tableheader}[1]{\multirow{2}{*}{\textbf{#1}}}
 \newcommand{\whitecell}[0]{}
@@ -48,35 +68,19 @@
 \newcommand{\tuple}[1]{\left \langle #1 \right \rangle }
 \newcommand{\fok}[0]{\text{FOK}}
 
-\newcommand{\question}[2]{\emph{``#1''}\footnote{Answer: #2}}
+\newcommand{\question}[2]{\textit{#1}\footnote{Answer: #2}}
 
 
-\comment{
-    \pdfinfo{
-        /Title (Towards a Dynamic Feeling of Knowing and its Cognitive Model)
-        /Subject (Proceedings of the 18\textsuperscript{th} International Conference on Cognitive Modeling)
-        /Author (Justin Li, Bryce Boyle)
-        /Keywords (Feeling of Knowing)
-    }
+%\title{Towards a Dynamic Feeling of Knowing and its Cognitive Model}
 
-    \title{Towards a Dynamic Feeling of Knowing and its Cognitive Model}
+%\author{
+%    {\large \bf Justin Li (justinnhli@oxy.edu)} \\
+%    {\large \bf Bryce Boyle (bboyle@oxy.edu)} \\
+%    Occidental College, 1600 Campus Road \\
+%    Los Angeles, CA 90041 USA
+%}
 
-    \author{
-        {\large \bf Justin Li (justinnhli@oxy.edu)} \\
-        {\large \bf Bryce Boyle (bboyle@oxy.edu)} \\
-        Occidental College, 1600 Campus Road \\
-        Los Angeles, CA 90041 USA
-    }
-}
-
-\pdfinfo{
-    /Title (Towards a Dynamic Feeling of Knowing and its Cognitive Model)
-    /Subject (Proceedings of the 18\textsuperscript{th} International Conference on Cognitive Modeling)
-    /Author (Anonymized)
-    /Keywords (Feeling of Knowing)
-}
-
-\title{Towards a Dynamic Feeling of Knowing and its Cognitive Model}
+\title{Towards a Computational Model of Feeling of Knowing that Changes over Time} % FIXME
 
 \author{
     {\large \bf Anonymized}
@@ -88,9 +92,13 @@
 
 \begin{abstract}
 
-    \fixme{Lorum ipsum}
+    Feelings of knowing (FOKs) are metamemory judgments that suggest an answer could be retrieved from memory with more effort.
+    This paper reviews the psychology literature on what factors underlie FOKs and map them onto the memory mechanisms of the common model of cognition architecture.
+    The two \fixme{most common} accounts of FOK, that of cue familiarity and accessibility, map directly onto properties of the retrieval cue and result respectively.
+    In considering these models of FOK, we also \fixme{highlight} \fixme{an omission} from the literature: the possibility that FOK changes over the course of answering a question.
+    We conclude by discussion the implications of this dynamic account, as well as the difficulties of evaluating computational models of FOK.
 
-    \textbf{Keywords:} Feeling of Knowing; Knowledge Search
+    \textbf{Keywords:} Feeling of Knowing; Metamemory; Knowledge Search; Cognitive Architecture
 
 \end{abstract}
 
@@ -98,126 +106,118 @@
 
 \section{Introduction}
 
-\emph{Feelings of knowing} (FOKs) are a memory phenomenon in psychology where, despite not knowing the answer to a question, the subject might \emph{feel} that they will be able to retrieve the answer with more thought.
-This and other metamemory phenomena, including \emph{tip-of-the-tongue states} and \emph{judgments of learning}, have long been studied as both a topic area of its own, as well as a way to gain insight into how memory is related to decision making \cite{Nelson1994WhyInvestigateMetacognition}.
-The psychology literature have focused on both the situations that lead to changes in FOKs, as well as the underlying sources of the judgment.
-More recently, researchers have proposed the \emph{cognitive-heuristic account} of metamemory: that FOK serves the \emph{function} of guiding memory retrieval \cite{Schwartz2011TipOfThe}, and to allow early failure without expending retrieval resources if the probability of finding an answer is low.
+\textit{Feelings of knowing} (FOKs) are a memory phenomenon where, despite not retrieving the answer to a question in the moment, the subject \textit{feels} that they will be able to do so with more effort.
+This and other metamemory phenomena have been studied as a topic of its own and as a way to gain insight into how memory is used to decision making \cite{Nelson1994WhyInvestigateMetacognition}, with research focusing on the determinants of FOK and what situational factors influence the metamemory judgment.
+More recently, researchers have proposed the \textit{cognitive-heuristic account} of metamemory: that FOK serves the function of guiding memory retrieval, allowing for early failure without expending resources if the probability of finding an answer is low \cite{Schwartz2011TipOfThe}.
+At the same time, the cognitive modeling community has been interested in modeling memory since its founding.
+Cognitive architectures such as ACT-R \cite{Anderson2007HowCanThe} grew out of early models of declarative memory, and to this day the mechanisms of base-level activation and spreading activation remain deeply embedded.
+Unlike recognition and recall, however, metamemory phenomena remain understudied, especially in the context of broader strategic knowledge search \cite{Newell1972HumanProblemSolving}.
 
-In parallel, the cognitive modeling community interested in modeling memory since the founding of the subfield.
-Cognitive architectures like ACT-R \cite{Anderson2007HowCanThe} in part grew out of early models of declarative memory \cite{Anderson1983ASpreadingActivation, Anderson1991ReflectionsOfThe}, and to this day the mechanisms of base-level activation and spreading activation remain deeply embedded within multiple architectures.
-While recognition and recall have been widely modeled, however, metamemory phenomena remain understudied, especially in the context of broader strategic knowledge search \cite{Newell1972HumanProblemSolving}.
-This paper therefore aims to complement existing literature by exploring how metacognitive judgment and control, and feelings of knowing in particular, might be instantiated in a common model of cognitive architecture \cite{Laird2017AStandardModel}.
-We begin by reviewing the literature on strategic knowledge search in order to place FOK in its ecological context, and identify a potential omission in our current understand of FOK.
+This paper therefore aims to complement existing literature by exploring how feelings of knowing might be instantiated in a common model of cognitive architecture \cite{Laird2017AStandardModel}.
+We begin by placing FOKs in the context of knowledge search, and in doing so identify a potential omission in our current understand of the phenomenon.
 We then briefly summarize the representation of memory in ACT-R, before committing the bulk of this paper to considering different possible sources of a computational FOK.
 Finally, we conclude by discussing how such a model of FOK might be evaluated, especially given the subjective nature of such judgments in the psychological literature.
 
-\section{Strategic Knowledge Search}
+\section{FOK and Strategic Knowledge Search}
 
-Knowledge search is the process of finding knowledge that is relevant and could be applied to the current problem solving context \cite{Newell1972HumanProblemSolving}. % FIXME knowledge search is also mentioned in the Soar book; need to look up what it says as well
-Newell does not elaborate on the processes of knowledge search, and knowledge search has received scant exploration in contrast to problem space search.
-At the same time, there has been a slow trickle of psychological research on not just individual memory retrievals, but how people use their memory system as a whole, and how problem solving and decision processes are intertwined with memory.
-Experiments where subjects narrated their attempts at answering autobiographical questions, then elaborated on their thinking while listening to the recording, showed a rich landscape of memory processes \cite{Burgess1996ConfabulationAndThe}.
-Beyond the actual recollection of an event, subjects also described determining the recall specifications, gauging their own familiarity with the subject, relating multiple relevant memories, and verifying that a potential answer is in fact correct.
-Within psychology literature, a simplified version of this account is widely accepted, in that metacognitive judgments such as FOK are used for metacognitive control, such as selecting a search strategy and deciding whether to terminate search \cite{Nelson1990MetamemoryATheoretical}.
-Only more recently has the causal relationship between FOK and search terminal been empirically studied \cite{Singer2008FeelingOfKnowing}, or how FOK plays a role in which items a test-taker might revisit for further study \cite{Hanczakowski2014FeelingOfKnowing}.
-In sum, although strategic memory processes are \fixme[overusing generally, broadly, widely, etc. here]{generally} acknowledged to occur, neither psychology nor cognitive systems research has looked at how this broader context might inform our understanding of individual memory mechanisms.
+As a \fixme{phenomenon} of memory, FOKs must be understood in the context of how it may help an agent retrieve knowledge; that is, in the context of \textit{knowledge search}.
+First proposed by \textcite{Newell1972HumanProblemSolving}, knowledge search is the process of finding knowledge that is relevant and could be applied to the current problem solving context.
+\citeauthor{Newell1972HumanProblemSolving} do not elaborate on the processes of knowledge search, and knowledge search has received scant exploration in contrast to problem space search.
+However, there has been a trickle of psychological research on how people use memory in naturalistic settings, and on the problem solving and decision processes that are intertwined with memory.
+The results show a rich landscape of memory processes: beyond basic recognition and recall, subjects described determining the recall specifications, gauging their own familiarity with the subject, relating multiple relevant memories, and verifying that a potential answer is in fact correct \cite{Burgess1996ConfabulationAndThe}.
+This account validates the idea that metamemory judgments such as FOK are used for control of retrieval processes, such as selecting a search strategy and deciding whether to terminate search \cite{Nelson1990MetamemoryATheoretical}.
+More recently, FOK has been shown to influence search termination and decision of what to rehearse \cite{Singer2008FeelingOfKnowing,Hanczakowski2014FeelingOfKnowing}, further corroborating the cognitive-heuristic account of metamemory.
 
-And yet, it is in the context of knowledge search that FOK must be understood.
-The cognitive-heuristic account of metamemory suggests that FOK guides memory retrieval, which in turn implies that it must provide meaningful information about the state and contents of memory. % FIXME something about signal to noise ratio here?
-% FIXME FOK is necessary because...
-% FIXME borrowing from TOT research, question of whether the same retrieval failure process leads to FOK, or if it's a post-hoc diagnostic process ([Schwartz2011TipOfThe])
-
-% FIXME need to bring up the idea of multiple retrievals to answer a single question
-% because the next thing to suggest is that FOK is dynamic, and changes per retrieval
-One consequence of accepting knowledge search is the dissociation between a single memory retrieval with that of answering a question.
-Both semantic and episodic/autobiographical questions may in fact require multiple memory retrievals, not all of which may be relevant or return results.
-As an example, for a question like \question{What film was nominated for seven Academy Awards in 1999?}{\emph{Life is Beautiful}} \cite{Norman2016TheRelationshipBetween}, one might perform retrievals for general cultural events in 1999, famous directors and actors/actresses, generally acclaimed films, and so on.
-This account complicates the study of FOK: about \emph{which} question is the subject feeling that they know the answer to?
+It is clear that FOKs must be understood within this broader context of knowledge search.
+If FOK is to guide memory retrieval, it must provide meaningful information about the state and contents of memory, such that an agent could determine the next retrieval from memory. % FIXME something about signal to noise ratio here?
+However, this raises questions about our understanding of FOK.
+Thus far, experimental procedures for FOKs tend to only solicit a single judgment, either before or after the subjects attempt to retrieve the answer.
+At the same time, our understanding of strategic memory processes suggests that multiple retrievals are often necessary to return an answer, with each individual retrieval potentially giving irrelevant results. % FIXME cite examples of cognitive architectures doing this?
+As an example, for a question like \question{What film was nominated for seven Academy Awards in 1999?}{\textit{Life is Beautiful}} \cite{Norman2016TheRelationshipBetween}, one might perform retrievals for general cultural events in 1999, famous directors and actors/actresses, generally acclaimed films, and so on.
+This account complicates the study of FOK: about \textit{which} retrieval is the subject feeling that they know the answer to?
 When a subject reports their feeling of knowing, is it to the original question, or to any of the sub-questions that they ask themselves as they engage in the strategic search for the answer?
 
 Here we propose that the reported FOK is to the original question, and not to any of the other retrievals for the search process.
-This conclusion is more obvious for a question such as \question{What is the capital of Australia?}{Canberra}.
+This \fixme{conclusion} is more obvious for a question such as \question{What is the capital of Australia?}{Canberra}.
 Most people will suggest answers such as Sydney, Melbourne, and Brisbane before giving up, but despite these successful retrievals for Australian cities, will report that their FOK goes down over time before they terminate their search.
-That is, it seems clear to us that FOK is a \emph{dynamic} signal that changes throughout the strategic memory search process.
-This is also consistent with the cognitive-heuristic account of FOK: in order for FOK to be a reliable signal for search termination, it \emph{must} change over the course of the process to reflect whether an answer is still likely to be found.
-This stands in contrast to how FOK is usually studied: all psychological experiments we have found only solicit subjects' FOKs once, either before or after they are given the chance to attempt to answer the question. % FIXME are there studies that hint at the dynamic nature of FOK? yes - Florer2000FeelingsOfKnowing, Koriat2001TheCombinedContributions
-While we have no doubt that such reports of FOK will still be correlated with the state of memory, ignoring the time course of FOK will likely omit crucial aspects of how the signal is cognitive determined.
-
-For the remainder of this paper, we will assume this dynamic view of FOK as we consider how FOK might be modeled computationally.
-
-% FIXME relation to information foraging theory
-% FIXME relation to information seeking behavior
-% FIXME \cite{Nelson2008TowardsARational}
-% This pattern of strategic retrieval processes is also found in human information seeking behavior \cite{Marchionini1995InformationSeekingIn}, although to our knowledge no formal comparison of these models have been done.
+That is, it seems clear to us that FOK is a \textit{dynamic} signal that changes throughout the strategic memory search process: as additional retrievals are used for problem solving, the FOK fluctuates for the overarching goal of answering the original question.
+This is also consistent with the cognitive-heuristic account of FOK: in order for FOK to be a reliable signal for search termination, it \textit{must} change over the course of the process to reflect whether an answer is still likely to be found.
+This stands in contrast to how FOK is usually studied: all psychological experiments we have found only solicit subjects' FOKs once, either before or after they are given the chance to attempt to answer the question. % FIXME are there studies that hint at the dynamic nature of FOK? yes - Florer2000FeelingsOfKnowing, Koriat2001TheCombinedContributions, https://link.springer.com/article/10.3758/s13423-021-01930-z
+While we have no doubt that such reports of FOK will still be correlated with the state of memory, ignoring the time course of FOK will likely omit crucial aspects of how the signal is determined.
+For the remainder of this paper, we will therefore assume this dynamic view of FOK as we consider how it might be modeled computationally.
 
 \section{Memory in the Common Model of Cognition}
 
-We are interested in modeling FOK in the context of the common model of cognition \cite{Laird2017AStandardModel}.
+We now describe the agent framework in which we are modeling FOK, namely, that of the common model of cognition \cite{Laird2017AStandardModel}.
 The common model defines a set of representations and processes for modeling cognition, as implemented in cognitive architectures such as ACT-R and Soar \cite{Anderson2007HowCanThe,Laird2012TheSoarCognitive}.
-Of particular interest to this paper are the declarative long-term memory (LTM) processes, which we describe below.
+Of particular interest to this paper are the declarative long-term memory (LTM) processes, specifically that of semantic memory, which we describe below.
 
 Formally, the contents of LTM is an edge-labeled directed graph, defined by the tuple $\tuple{S, P, L, E}$:
 $S$ the set of entities or concepts (we use these terms interchangeably), which corresponds to the internal nodes of the graph;
 $P$ the set of predicates, which corresponds to the edge labels of the graph;
 $L$ the set of literals, such as numbers and strings, which corresponds to the leaf nodes of the graph;
-and $E{\subset}S{\times}P{\times}O$, where $O=S{\cup}L$, the set of \emph{triples}, which correspond to the directed edges of the graph from $s{\in}S$ to $o{\in}O$ with label $p{\in}P$.
-For convenience, we will refer to the elements of a triple $\tuple{s, p, o}$ as the \emph{subject}, the \emph{predicate}, and the \emph{object} respectively.
+and $E$ the set of direct edges, $\tuple{s, p, o} \subset S{\times}P{\times}O$, with $O=S{\cup}L$.
+Borrowing from the knowledge representation literature, we will also refer to edges as \textit{triples}, and refer to the elements of a triple $\tuple{s, p, o}$ as the \textit{subject}, the \textit{predicate}, and the \textit{object} respectively.
 
 An agent has two ways of getting knowledge from LTM.
-First, for any entity $s$, the agent can \emph{retrieve} all outgoing edges $\setof{\tuple{s, p, o}{\in}E}$ for which that entity is the subject.
-This mechanism is for accessing related information of a known concept, but to find an unknown concept that has certain properties, the agent must \emph{query} LTM instead.
-To do so, the agent must create a query \emph{cue} $Q = \setof{q{\in}P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $S_Q = \setof{\tuple{s, p, o}{\in}E \; \forall \tuple{p, o}{\in}Q}$.
-If more than one such \emph{retrieval candidate} exists, the entities with higher \emph{base-level activation} are preferentially returned.
-Base-level activation is determined by $A(s) = \ln (\sum {t_i^{-d}})$, where $t_i$ is the time since the entity $s$ was last retrieved, and $d$ is the decay rate parameter.
-Activation thus captures the recency and frequency of use of a concept, and is often used as a proxy of its relative importance to the agent.
-\fixme[Talk about query vs. retrievals here]{}
+First, for any entity $s$, the agent can \textit{retrieve} all outgoing edges $\setof{\tuple{s, p, o}{\in}E}$ for which that entity is the subject.
+This mechanism is for accessing related information of a known concept, but to find an unknown concept that has certain properties, the agent must \textit{query} LTM instead.
+To do so, the agent creates a query \textit{cue} $Q = \setof{q{\in}P{\times}O}$, which describes the predicates and corresponding objects of the desired entity $s$ such that $S_Q = \setof{\tuple{s, p, o}{\in}E \; \forall \tuple{p, o}{\in}Q}$.
+If more than one such \textit{retrieval candidate} exists, the entities with higher \textit{base-level activation} are preferentially returned.
+Base-level activation is determined by $A(s) = \ln (\sum {t_i^{-d}})$, where $t_i$ is the time since the entity $s$ was last retrieved, and $d$ is a decay rate parameter.
+Activation thus captures the recency and frequency of use of a concept, and is often used as a proxy of the importance of the concept to the agent at a particular time.
+% FIXME consider talking about Companions, where the "cue" is the analogy target \cite{Forbus1995MACFACAModel}
 
 Within this framework, we can define the general process through which an FOK might be generated.
 When the agent is presented with a question, the agent would execute a sequence of queries and retrievals to LTM to attempt to answer the question.
-For clarity, we call the answer to the overarching question the \emph{target} of the question, while an individual query will have a \emph{result} (the entity that is returned) out of a set of \emph{potential results} (other entities that match the cue).
-Each query and retrieval executed by the agent will affect the agent's overall FOK towards the question.
-We are interested in the computational processes that occur at each query, and how they affect the overall FOK.
-Without loss of generality, we further define the FOK to be a real number between -1 and 1; this allows the agent to understand whether an FOK is high or low in an absolute sense, without \fixme[I'm not sure how that would work]{the need for comparison against other FOKs}.
+For clarity, we call the answer to the overarching question the \textit{target} of the question, while an individual query will have a \textit{result} (the entity that is returned) out of a set of \textit{candidates} (other entities that match the cue).
+We assume that the FOK for the original question will change with each query and retrieval, and we are therefore interested in the computational processes that occur at those times and how they might affect the overall FOK.
 
-A quick note on terminology: the term \emph{retrieval} is overloaded in both psychology and cognitive architecture literature to sometimes mean both queries (with a cue) and retrievals (of a known concept in LTM).
+A quick note on terminology: the term \textit{retrieval} is overloaded in both psychology and cognitive architecture literature to sometimes mean both queries (with a cue) and retrievals (of a known concept in LTM).
 Retrieval will be used in the psychological sense in this paper; we will disambiguate the term as needed when talking about the specific computational mechanism.
 
 % FIXME something about FOK as a by-product/observer process
 % as opposed to a different system separate from memory
 % Koriat1993HowDoWe
 
-\section{Psychological Sources of FOK}
+\section{Psychological Accounts of FOK}
 
-This section explores how existing hypothesized sources of feelings of knowing might be calculated within the common model.
-Within the psychology literature, there are three main theories of FOK: cue familiarity, accessibility, and competition.
+This section explores how psychological accounts of FOKs might be realized within the common model of cognition.
+Within the psychology literature, there are three main accounts of FOK: cue familiarity, accessibility, and competition.
 For each, we first discuss the relevant psychological literature, before evaluating how that may be translated computationally into a common model LTM.
-A summary of these sources can be found in Table \ref{sources}.
-We leave the evaluation of these models to its own section afterwards.
+Since the literature primarily assumes a static FOK for a question, instead of changing over time, these computational models are all calculated from a single retrieval.
+A summary of these sources of information for FOK in this section can be found in Table \ref{sources}.
+
+Two mathematical caveats must be considered.
+First, FOK may be a function of multiple values; we will assume that it is a summary statistic denoted as $f()$.
+Although the choice of summary statistic may affect the FOK calculation --- the mean will be more sensitive to outliers than the median, for example --- we consider this detail too low level for this paper.
+It is an open question whether other properties of the distribution, such as its variance, play a role in FOK. % FIXME
+Second, it is unclear what the range of the summary statistic function should be.
+The main constraint is the ability of the agent to determine whether an FOK judgment is high or low and thereby make retrieval decisions.
+The output could theoretically range over the real numbers --- such as if FOK was the activation of a concept --- where decision thresholds are learned over time. % FIXME reword
+As we consider a dynamic FOK that may shift between difference sources of information, however, normalizing the FOK may be necessary.
+One method for doing so is to consider the \fixme{FOK source} against some distribution of values.
+Since the \fixme{comparison} population depends on the source, we will consider an appropriate comparison group for each source. % FIXME
+
+% We leave the evaluation of these models to its own section afterwards. % FIXME revisit when the conclusion is written
 
 \begin{table*}[ht]
+\centering
 \begin{tabular}{c|cccccc}
-\whitecell           &  \tableheader{Cue}   &  \textbf{Cue}           &  \tableheader{Candidates}  &  \textbf{Candidate}      &  \tableheader{Result}  &  \textbf{Result}        \\  
-\whitecell           &  \whitecell          &  \textbf{Neighborhood}  &  \whitecell                &  \textbf{Neighborhoods}  &  \whitecell            &  \textbf{Neighborhood}  \\  
-\hline                                                                                                                                                                               
-\textbf{Count}       &  \graycell           &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Result Familiarity     \\  
-\textbf{1/Count}     &  \graycell           &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
-\textbf{Activation}  &  \blackcell          &  Cue Familiarity        &  Competition (?)                &  \whitecell              &  Accessibility         &  Result Familiarity     \\  
+\whitecell           &  \tableheader{Cue}  &  \textbf{Cue}           &  \tableheader{Candidates}  &  \textbf{Candidate}      &  \tableheader{Result}  &  \textbf{Result}        \\  
+\whitecell           &  \whitecell         &  \textbf{Neighborhood}  &  \whitecell                &  \textbf{Neighborhoods}  &  \whitecell            &  \textbf{Neighborhood}  \\  
+\hline                                                                                                                                                                              
+\textbf{Count}       &  \graycell          &  Cue Familiarity        &  Accessibility             &  \whitecell              &  \graycell             &  Accessibility          \\  
+\textbf{1/Count}     &  \graycell          &  \whitecell             &  Competition               &  \whitecell              &  \graycell             &  Competition            \\  
+\textbf{Activation}  &  \blackcell         &  Cue Familiarity        &  Competition               &  \whitecell              &  Accessibility         &  Accessibility          \\  
 \end{tabular}
-
-% \begin{tabular}{c|cc}
-% \whitecell           &  \tableheader{Retrieval}  &  \textbf{Retrieval}     \\  
-% \whitecell           &  \whitecell               &  \textbf{Neighborhood}  \\  
-% \hline                                                                         
-% \textbf{Number}      &  \graycell                &  \whitecell             \\  
-% \textbf{1/Number}    &  \graycell                &  Competition            \\  
-% \textbf{Activation}  &  Accessibility            &  \whitecell             \\  
-% \end{tabular}
 
 \caption{
     Difference sources of information for calculating FOK, and which corresponding psychology FOK theory they belong in.
+    ``Neighborhood'' refers to the concepts that are graph neighbors of the cue, candidate, or result.
     Black cells represent sources that do not exist (e.g., the activation of the retrieval cues, if the cues do not exist in LTM);
-    gray out cells represent sources that exist but not meaningful for FOK (e.g., the number of retrieval results, which is constant);
-    and white cells represent sources that exist and may be meaningful, but are unexplored in the literature.
+    gray cells represent sources that exist but not meaningful for FOK (e.g., the number of retrieval results, which is constant);
+    and white cells represent sources that exist and may be meaningful, but have not been explored in the literature.
     \fixme[Need to explain ``neighborhood'']{}
 }
 \label{sources}
@@ -225,154 +225,120 @@ We leave the evaluation of these models to its own section afterwards.
 
 \subsection{Cue Familiarity}
 
-As the name implies, the \emph{cue familiarity} account of FOK focuses on the contribution of the search cue to the feeling of knowing \cite{Reder1992WhatDeterminesInitial,Metcalfe1993TheCueFamiliarity,Koriat2001TheCombinedContributions}.
-For the purpose of this paper, we include all FOK sources that are based on the semantic meaning of the cue, including familiarity and domain knowledge \cite{Schwartz1994SourcesOfInformation}.
-The intuition behind this account is that FOK is a summarization of the amount of knowledge the agent might have about the topic, as estimated from the terms of the question.
-The more the agent is familiar/knowledgeable about the concepts in the question, the more likely that they will know the answer, and therefore the higher the FOK.
-
-From the computational standpoint, an FOK based on cue familiarity must be a function of the cue $Q = \setof{\tuple{p, o}{\in}P{\times}O}$.
-We consider two ways in which the ``familiarity'' of the cue is calculated as a summary statistic, either of the base-level activation of the objects in the cue, or of the connectivity of those objects.
-Although the choice of summary statistic may affect the FOK calculation --- the mean will be more sensitive to outlier values than the median, for example --- we consider this detail too low level for this paper, and will simply use $\phi$ to indicate that \fixme{it is a feature}.
-It is an open question whether other summaries of the distribution of the \fixme{values}, such as its variance, play a role in FOK.
+As the name implies, the \textit{cue familiarity} account of FOK focuses on the contribution of the search cue to the feeling of knowing \cite{Reder1992WhatDeterminesInitial,Metcalfe1993TheCueFamiliarity,Koriat2001TheCombinedContributions}.
+For the purpose of this paper, we include all FOK sources that are based on the cue, including familiarity and domain knowledge \cite{Schwartz1994SourcesOfInformation}.
+The intuition is that FOK is a summary of the amount of knowledge the agent might have about the topic, as estimated from the terms of the question.
+The more the agent is familiar or knowledgeable about the topic, the more likely that they will know the answer, leading to a higher FOK.
+Computationally, an FOK based on cue familiarity must be a function of the cue $Q = \setof{\tuple{p, o}{\in}P{\times}O}$.
+We consider two sources that might indicate the ``familiarity'' of the cue: as its activation, or as its connectivity.
 
 \subsubsection{Activation}
 
-One possible metric for the familiarity of the cue is the activation of each individual object in the cue.
-Since activation reflects the recency and frequency of \fixme{use} of a concept, this \fixme{calculation} therefore reflects how often the topic has arisen, hence the agent's familiarity with those concepts.
-\fixme{discuss why it is \emph{relative} activation}[]
-Formally, this FOK is defined as:
-
-$$\fok = \fok(Q) = \phi\left(A(o_1), ..., A(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
-
-An additional scaling factor, such as dividing by the sum or mean of all entities in LTM, may be necessary to \fixme{reduce the range of the result}.
+One possible metric for the familiarity of the cue is the activation of each individual concept in the cue.
+Since activation reflects how recently and frequently a concept has been encountered, concepts with a high activation would be ones that are presented often, which in turn suggests that the agent would be familiar with them.
+Formally, this account of FOK could be defined as:
+$$\fok = \fok(Q) = f\left(A(o_1), ..., A(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
+For the purpose of normalization, this raw value could be placed in the context of the activation of all concepts in LTM.
 
 \subsubsection{Connectivity}
 
-In contrast to activation, connectivity captures how much knowledge the agent might have of each component of the cue.
+In contrast to activation, connectivity captures how much knowledge the agent has of each component of the cue.
 A concept in which an agent is knowledgeable would be connected to many other concepts, while a concept of which the agent is ignorant would only be sparsely connected.
-In the extreme, the simple presence or absence of the concept (i.e., whether the agent recognizes the concept) may be a sufficient signal to terminate search, and it has been shown that recognition is \fixme{beneficial} to knowledge search \cite{Li2012FunctionalInteractionsBetween}.
+In the extreme, the simple presence or absence of the concept (i.e., whether the agent recognizes the concept) may be a sufficient signal to terminate search, and it has been shown that recognition is can be a useful heuristic for knowledge search \cite{Li2012FunctionalInteractionsBetween}.
 
-The fan of a concept in LTM defines its connectivity, although variations on this metric is possible.
-First, it may be meaningful to only consider the fan-in or fan-out of the concept, which represent \fixme{FIXME}.
-Second, a broader sense of connectivity may include not only the immediate neighbors of the concept, but neighbors up to some graph distance away (whose weight may be attenuated based on the inverse of that distance).
-Again, we leave these implementation details as future work, and leave the precise meaning of the $\text{fan}(s{\in}S)$ function undefined.
-Formally, this FOK is defined as:
+The connectivity of a concept is measured by its \textit{fan}, the number of incoming (fan-in) and outgoing (fan-out) edges.
+Arguments could be made for only considering fan-in or fan-out.
+The fan-in would represent \fixme{FIXME}, while the fan-out would represent \fixme{FIXME}.
+Of course, it is also possible to consider the overall fan of a concept, regardless of the direction of the edges.
+We leave these implementation details as future work, and leave the precise meaning of the $\text{fan}(s{\in}S)$ function undefined.
+Formally, this account of FOK could be defined as:
+$$\fok = \fok(Q) = f\left(\text{fan}(o_1), ..., \text{fan}(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
+As with an FOK based on activation, this raw value could be normalized within the distribution of fan values of all concepts in LTM.
 
-$$\fok = \fok(Q) = \phi\left(\text{fan}(o_1), ..., \text{fan}(o_n)\right) \; \forall {\tuple{p, o}{\in}Q}$$
-
-\fixme[Are there other cue-related sources worth mentioning, e.g., recognition?]{}
+% FIXME talk about spreading as a combination of activation and connectivity
+%Second, a broader sense of connectivity may include not only the immediate neighbors of the concept, but neighbors up to some graph distance away (whose weight may be attenuated based on the inverse of that distance).
 
 \subsection{Accessibility}
 
-Unlike cue familiarity metrics, which evaluate the cue, the accessibility account of FOK evaluates the metadata of a retrieval to determine a feeling of knowing \fixme{citation needed}.
-As such, accessibility is only available during and after a retrieval, using what some have called the ``byproducts`` of the retrieval process \cite{Koriat1993HowDoWe}.
-The intuition behind accessibility is that the retrieval process may provide hints as to whether the agent could answer the question; if the first result or the metadata is one with low confidence or high uncertainty, this may result in a low FOK.
-\fixme{More generally, this view suggests that the best estimate of whether the agent can answer a question is by attempting it, before evaluating whether it should continue based on the result.}
-
-For the purpose of this paper, we expand on the idea of accessibility to also include properties of the result of a query as well as metadata from the retrieval.
-Since the available metadata depends on the retrieval algorithm, no generic formulation of these metrics will be possible.
-LTM systems based on analogy \cite{Forbus1995MACFACAModel} or high-dimension embeddings \cite{Kanerva1993SparseDistributedMemory} will necessarily have different internal representations than in the common model of cognition.
-Nonetheless, we attempt to be broad in defining how an accessibility-based FOK may be calculated.
+Unlike cue familiarity metrics which depend on the cue, the accessibility account of FOK considers information that is only available during and after a retrieval, using the ``byproducts`` of the retrieval process \cite{Koriat1993HowDoWe}.
+The intuition behind the accessibility account is that the retrieval process may provide hints as to whether the agent could answer the question; if the first result or the metadata is one with low confidence or high uncertainty, this may result in a low FOK.
+For the purpose of this paper, we expand on the idea of accessibility to also include properties of the result of a retrieval as well as metadata from the process.
 
 \subsubsection{Activation}
 
 As with the activation of the cue, the activation of the result of a retrieval may be a source of FOK.
-Beyond representing the recency and frequency of use and therefore whether the concept is familiar, however, activation in this context also determines the fluency of the retrieval: the higher the activation, the more quickly the retrieval occurs \cite{Anderson2004AnIntegratedTheory}.
-Fluency is cited as another source of FOK \fixme{citation needed}, but we consider it as equivalent to the activation of the retrieved result under the ACT-R framework.
-Activation has also been treated as confidence in other contexts \fixme{citation needed}, but we ignore that distinction here.
+Beyond summarizing the recency and frequency of use and therefore whether the concept is familiar, activation in this context may also represent the speed of the retrieval: the higher the activation, the more quickly the retrieval occurs \cite{Anderson2004AnIntegratedTheory}.
+There is a large literature on the correlation between fluency and various memory phenomena \cite{Alter2009UnitingTheTribes}, but here we consider it as equivalent to the activation of the retrieved result under the common model.
 
-Instead of using the raw activation value of the result of a retrieval, we normalize the activation against the average activation of all items in memory, which gives a defining of FOK as:
-$$\fok = \fok(s) = \ln(\frac{A(s)}{\bar{A}_S})$$
-where $\bar{A}_S$ is the average activation. % FIXME meaningful to talk about other summary statistics, e.g., \phi{a_s} instead of \bar{a_s}?
-The intuition is that the agent is evaluating the relative importance of this result against other potential results.
-By this reasoning, however, the average of different sets of contexts may be possible; an argument could be made for only normalizing against other entities that match the query, $S_Q$.
+Formally, this account of FOK could be defined as:
+$$\fok = \fok(s) = f(A(s))$$
+where $s$ is the result of a retrieval.
 While this formulation may not be meaningful for architectures that always retrieve the most highly activated entity that matches the query, the introduction of noise or other ranking metrics may lead to different FOK behavior.
 
-% Relative Activation FOK measures how frequently and recently a node has been accessed compared to all other items in memory.
-% 
-% $$\text{RelCueActFOK}(Q) = \sum_{<p, s> \in Q} (s) \ln(\frac{A(s)}{\bar{A}_S})$$
-% 
-% $$\text{RelActFOK}(Q, s) =
-% \begin{cases}
-%     \text{RelCueAct}(Q) & {if |Q| > 0} \\
-%     \text{RelTargetAct}(s)& {if |Q| = 0} \\
-% \end{cases}
-% $$
+Here the normalization group \fixme{has more options}.
+Beyond using the activation of all concepts in LTM, another possible comparison group is against all candidates for the retrieval --- that is, the activation of other concepts that match the retrieval cue.
+The intuition is that the agent is evaluating the relative importance of this result against other potential results.
+Such a comparison group would blur the difference between the accessibility account with the competition account, which we discuss in the next section.
 
 \subsubsection{Connectivity}
 
-A different \fixme{set} of information about the result of a retrieval is its connectivity, or the number of graph neighbors it has.
+A different source of information about the result of a retrieval is its connectivity, or the number of graph neighbors it has.
 As before, the connectivity of an entity represents the amount of knowledge that the agent has about the result.
 Note that the activation of an element and its connectivity are not necessarily correlated.
-While spreading may cause better-connected entities to have higher activation, it is possible for a concept to be well-understood (i.e., have high connectivity) but irrelevant to the recent/current situation (i.e., have low activation), and vice versa.
+While spreading activation may cause better-connected entities to have higher activation, it is possible for a concept to be well-understood (i.e., have high connectivity) but irrelevant to the recent/current situation (i.e., have low activation), as is the case when false memories are induced \cite{Li2016TowardsModelingFalse}.
 
-Again, we normalize the connectivity of the result by the average connectivity of everything in memory, leading to an FOK metric defined by:
-
+Formally, this account of FOK could be defined as:
 $$\fok = \fok(s) = \ln(\frac{\text{fan}(s)}{\overline{\text{fan}}_S})$$
+As before, this raw value could be normalized against all concepts in LTM, or only against other candidates for the retrieval.
 
-The same notes about changing the context over which the connectivity is averaged apply here, as do different ways of defining neighborhood.
+\subsubsection{Other} % FIXME 
 
-\subsubsection{Other}
-
-Given the broad definition of the accessibility account, other \fixme{metrics} are also possible, although they are harder to define computationally for the common model.
-A \fixme{common} explanation of FOK is that of a \emph{partial retrieval} from LTM, where an agent retrieval some but not all knowledge about an entity \cite{Hanczakowski2017MetamemoryInA}.
-The intuition behind this account is that a partial retrieval suggests to the agent that a complete retrieval is possible, thus boosting FOK.
+Given the broad definition of the accessibility account, other metadata of the retrieval process and other properties of the results have been proposed, although they do not map as cleaning onto the existing memory mechanisms of the common model.
+One such possibility is for FOK to be based on a \textit{partial retrieval} from LTM, where an agent retrieves some but not all knowledge about a concept \cite{Hanczakowski2017MetamemoryInA}.
+The intuition is that a partial retrieval suggests to the agent that a complete retrieval is possible, thus leading to an FOK.
 While this theory is psychologically plausible, we note that partial retrievals are not currently a feature of ACT-R, and designing such a mechanism for the common model is outside the scope of this paper.
 
-Similarly, incorrect information about the target may contribute to FOK as well \cite{Koriat1993HowDoWe,Koriat1995DissociatingKnowingAnd}.
+Similarly, incorrect information about the target may contribute to FOK as well \cite{Koriat1993HowDoWe}.
 It is unclear, however, whether this is distinct from when the correct answer is retrieved, since the agent has no a priori knowledge that the retrieved result is wrong.
-It's possible that the higher FOK from an incorrect result is due to the agent \emph{believing} it has the answer, the same as if it did in fact \fixme{got it correct}.
+It's possible that the higher FOK from an incorrect result is due to the agent \textit{believing} it has the answer, the same as if the answer was in fact incorrect.
 For this reason, we ignore the correctness of a retrieval, and do not consider FOK from an incorrect result any differently from other results.
-% FIXME arguably, most FOK generated from the methods in this paper will be from "incorrect results"
+We do note that, given the dynamic account of FOK, most of the results from intermediate queries will not be an answer to the original question, and thus may be considered ``incorrect'' results. % FIXME
 
 Finally, the semantic content of the result itself may be a source of FOK.
-The agent may be able to infer the correct answer from the result of a retrieval, and knowing that it has this ability may boost the FOK.
-The inference process is highly dependent on the question being asked as well as the existing knowledge and capabilities of the agent, and given the space of possibilities for each part, we leave the relationship between semantic content and FOK to future work.
+The agent may be able to infer the correct answer from the result of a retrieval, and performing this inference may boost the FOK.
+The inference process is highly dependent on the question being asked as well as the existing knowledge and capabilities of the agent, however, and given the large space of possibilities for both aspects, we leave the relationship between semantic content and FOK for future work.
 
 \subsection{Competition}
 
 Less commonly discussed than the cue familiarity and accessibility accounts of FOK is the competition account \cite{Schreiber1998TheRelationBetween}.
-The main distinction of this account is that it is not the cue or the result of a retrieval that determines FOK, but rather the \emph{candidates} for a particular query.
-Under the competition account, the more potential results to a query, the lower the FOK should be, with the intuition being that the agent is unsure which of the possible results is correct.
-While technically this may fall under the accessibility account, in that the number of candidates is a piece of metadat from the retrieval process, we consider the competition account sufficiently different and address it separately.
-% FIXME how is this different from averaging over matching results?
-
-\subsubsection{Connectivity}
-
-A direct translation of the competition account is to use the inverse of the number of candidates:
-
+The main distinction of this account is that it is not the cue or the result of a retrieval that determines FOK, but rather the \textit{candidates} for a particular query.
+The intuition for the competition account is that, the more potential results to a query, the lower the FOK should be, with the intuition being that the agent is unsure which of the possible results is correct.
+A direct translation of the competition account is to use the inverse of the number of candidates, which could be defined as:
 $$\fok = \fok(Q) = \frac{1}{|S_Q|}$$
 
-\subsubsection{Activation}
-
-Broadening the idea of using the candidates to determine FOK, it is also possible to use the activation of the candidates as a metric.
-Much like how a large number of retrieval candidates could indicate uncertainty, so could uniform distribution of the activations of the candidates.
+We could, however, broaden the idea of using the candidates to determine FOK, by considering the distribution of the activation or connectivity of the candidates.
+Much like how a large number of retrieval candidates could indicate uncertainty, so could a uniform distribution of the activations of the candidates.
 Such a distribution would indicate that no candidate is more likely than the other, hence suggesting uncertainty; in contrast, a peaked distribution would mean that the candidate with more probability mass is likely to be the correct answer.
-Mathematically, any number of summary statistic of dispersion, such as variance, standard deviation, and interquartile range, could serve as the basis for calculating FOK.
-The equation below uses variance for simplicity, defining FOK as:
+An activation-based competition account of FOK could be defined as:
+$$\fok = \fok(Q) = \frac{1}{\text{Var}(\{A(s) \forall s \in S_Q\})}$$ % FIXME
+As with other accounts, the variance of the activation values could be replaced with other summary statistics such as the standard deviation, as long as it correlated variance and inversely correlated with the uniformity of the activation values.
 
-$$\fok = \fok(Q) = \text{var}(A(s) \forall s \in S_Q)$$
+We note that while the competition account of FOK may technically be a subcategory of the accessibility account, in that the number of candidates is a piece of metadata from the retrieval process, we consider the competition account sufficiently different to address it separately.
+In particular, unlike the accessibility account where the result of a retrieval plays a main role, the competition account (in the extreme) does not consider the result at all.
+Rather, it is the distribution of the activation or connectivity of the candidates that influence FOK; which specific concept is retrieved does not play a role.
 
-% Looking at connectivity from a different perspective, the competition hypothesis of feeling of knowing views more results as a contributor to a lower FOK \cite{Schreiber1998TheRelationBetween}.
-% Competition 2 FOK is based on the idea that the more possible right answers there are, the more distractors there will be, making it more difficult for the agent to identify the correct answer.
-% So, in contrast to Outgoing Edges FOK, the more outgoing edges from a node the lower the FOK.
-% % I'm not sure if these sums are correct/ what should go on top
-% \noindent$$Competition2FOK(s) =
-% \begin{cases}
-%     \exists o{\in}O, \frac{1}{\sum\limits_{s: <s, p, o> \in E} {|OutEdges(s)|}} & {if |Q| > 0} \\
-%     \exists o{\in}O, \frac{1}{\sum\limits_{o: <s, p, o> \in E} {|OutEdges(o)|}} & {if |Q| = 0} \\
-% \end{cases}
-% $$
+\subsection{Other Accounts of FOK}
 
-\subsection{Other Sources}
-
-% FIXME see \cite{Nelson1984AccuracyOfFeeling}
-% FIXME episodic memory? see \cite{Schwartz2014ContextualInformationInfluences}
+Cue familiarity, accessibility, and competition represent the main accounts of FOK, but other theoretical mechanisms are possible \cite{Nelson1984AccuracyOfFeeling}.
+Of particular note is how agent's expectations about the question may influence FOK, as demonstrated by \textcite{Widner1996TheEffectsOf}, where subjects were told that questions were either ``easy'' or ``difficult''.
+Another possible source of information for FOK is from episodic memory, as demonstrated by \textcite{Schwartz2014ContextualInformationInfluences}, in contrast to the assumption that LTM refers to semantic memory.
+These two sources may be combined in cases where the question asks for knowledge from a national curriculum (as in the US TV show \textit{Are You Smarter than a 5th Grader?}), which might lead to an expectation that the answer is easy, as well as an episodic memory that the answer was known at some point in the past \cite{Singer2008FeelingOfKnowing}.
+Such complex metamemory manipulations are outside the scope of this paper, although their connections to FOK may be a fruitful future direction of research.
 
 \subsection{Hybrid Accounts}
 
-The accounts of FOK listed in this section thus far are individual sources, meaning that FOK considered exclusively a function of one computation.
-In practice, FOK may be the result of more complex combinations of all or some of these sources, that together lead to the FOK that people report.
+The accounts of FOK listed in this section thus far are individual sources, meaning that FOK considered exclusively a function of one type of memory metadata.
+In practice, FOK may be the result of more complex combinations of some or all of these sources, that together lead to the FOK that people report.
 This idea is not new, as it has been noted that cue familiarity is available after the question is asked but before a retrieval, while accessibility is only available during or after a retrieval.
 It has therefore been suggested that these could be used sequentially: that FOKs solicited earlier are a result of cue familiarity, and FOKs solicited later are a result of accessibility \cite{Florer2000FeelingsOfKnowing,Koriat2001TheCombinedContributions}.
 
@@ -382,44 +348,40 @@ For example, instead of using the fan of a retrieval result directly, FOK could 
 Such a calculation is reminiscent of spreading activation, suggesting that it is psychologically plausible.
 A systematic exploration of ways to combine sources of FOK, and what they would mean psychologically, is beyond the scope of this paper.
 
-% FIXME knowing that a topic is in the high school curriculum might boost your FOK, but the knowledge could come from semantic memory of the education system instead of personal experience.
+\section{Accounts for a Dynamic FOK}
 
-
-\subsection{Dynamic FOK}
-
-As mentioned earlier in this paper, the psychology literature has focused on FOK being a single measurement as people problem solve.
-The sources of FOK listed thus far have come from this tradition, although the hybrid accounts hint at how different sources might be combined. 
+As mentioned earlier in this paper, the psychology literature has focused on FOK as a single measurement during the process of question answering.
+The sources of FOK discussed thus far have come from this tradition, although the hybrid accounts hint at how different sources might be combined. 
 We now return to the idea that FOK may instead by dynamic, changing over time as different strategies are used to answer a single question.
-This section considers the ramifications of this hypothesis, and proposes additional ways that FOK may be determined.
+This section considers the ramifications of this hypothesis, and proposes additional possibilities for how FOK may be determined.
 
 % what does this mean for existing psychology experiments?
-We first note that the FOK solicited in past experiments may not be invalid.
-However, those measurements of FOK may only provide a narrow view of how FOK is determined, accurate only to the state of knowledge search of the subject at the time of solicitation.
-This is complicated by how the knowledge search state is unknown, as subjects are rarely asked to engage in a verbal protocol of describing their thinking, as might be done in more expansive studies of memory \cite{Burgess1996ConfabulationAndThe}.
-As a result, it is difficult to determine the cues that is being used for familiarity judgments, or the targets of which accessibility is measured.
+We first note that the FOK solicited in past experiments are likely not invalid, but they are likely to only provide a narrow view of FOK.
+These measurements may only be accurate to the state of knowledge search of the subject at the time of solicitation, and without a detailed understanding of the search state, it is difficult to isolate how the FOK was generated.
+Even assuming the cue familiarity or accessibility accounts, it raises questions as to what cues were used for familiarity judgments, or what retrieval metadata were used for when accessibility is measured.
 The possibility of multiple retrievals that occur in sequence also muddle the distinction between retrieval cues and retrieval results, since the result of one retrieval may become the cue for the next retrieval.
-This in fact makes the hybrid account of FOK more parsimonious, as it is not that different sources are used in at different points of problem solving, but that the targets \emph{becomes} cues as multiple retrievals occur.
+This in fact makes the hybrid account of FOK more parsimonious, as it is not that different sources are used in at different points of problem solving, but that the targets \textit{becomes} cues as multiple retrievals occur.
 
 % what does this mean for existing sources?
 A dynamic FOK has implications not just for which sources dominate (if they are indeed different sources at all), but what information each source provides.
 During the course of problem solving, the activation of entities will change based on the results of previous retrievals.
-A cue that initially had low activation may be boosted if multiple retrieval results are linked to it by chance; conversely, previously highly activated entities may become less so over time.
-While the connectivity of entities is less affected by retrievals, it is also not impossible that new connections between entities could be made during problem solving, say if someone realizes that blue whales are not fish in answering \question{What is the largest fish on earth?}{Whale sharks}.
-In sum, the sources do not only provide a single number, but a \emph{history} of such values which could be combined into an FOK judgment.
-Mathematically, we might consider each source to be a function of time, $\fok_t$, where $t$ is \fixme{the amount of time in the past of the source.}
+A cue that initially had low activation may be boosted if multiple retrieval results are connected to it; conversely, previously highly activated entities may become less so over time.
+While the connectivity of LTM is less affected by retrievals, it is also not impossible that new connections could be made during problem solving, for example if an agent realizes that blue whales are not fish in answering \question{What is the largest fish on earth?}{Whale sharks}.
+In sum, the sources do not only provide a single value, but a \textit{history} of values which could be combined into an FOK judgment.
 
 % what other sources might this allow for?
-This formulation allows for \emph{previous values} of FOK to serve as a source of FOK.
-Consider again the question of what is the capital of Australia. % FIXME this example is not great, since both activation and recursive FOK is dropping; is there a case where a "plain" determinant rises but FOK trends down? is that a contradiction?
-One plausible model of how FOK changes is that it is based on the activation of each retrieval result (as per the accessibility account), due to higher activation cities being retrieved first.
-This effect, however, may be compounded by how FOK has been trending down; that is, since $\fok_3 > \fok_2 > \fok_1$, the agent concludes that they are unlikely to know the answer and thereby terminates the search.
-More generally, this raises the possibility that FOK is defined as a function of its own history:
-$$\fok = f(\fok_1, ..., \fok_T) = $$
-up to some time $T$ in the past.
-Beyond the trend of previous FOK, two other plausible functions may be a weighted average of previous FOK, or simply the number of retrievals that have occurred (as an indication of whether the agent has exhausted possible answers).
+Intriguingly, access to the history of sources expands \fixme{range} of inputs for determining FOK, notably that of \textit{previous} FOK values.
+Consider again the question of what is the capital of Australia, and where a subject might guess with several large cities before giving up.
+Although this could be explained by the accessibility account of FOK --- where more prominent cities such as Sydney are given first, before less-well-known cities like Perth --- another plausible model is that the search termination is not due to just the activation of the last retrieved concept, but due to the overall downward trend of activation.
+In this case, the FOK judgments are not based purely on activation, but is additionally modulated by how the FOK it self has changed over time.
+Mathematically, we might define FOK to be a function of time, $\fok_t$, with $t$ being the number of steps in the past.
+In this example, the fact that $\fok_{{\negsub}3} > \fok_{{\negsub}2} > \fok_{{\negsub}1}$ would further decreases the FOK judgment.
+Beyond the trend of previous FOKs, two other plausible functions may be a weighted average of previous FOKs, or simply the number of retrievals that have occurred (as an indication of whether the agent has exhausted possible answers).
+More generally, FOK could be defined as
+$$\fok = f(\fok_-1, ..., \fok_T) = $$
+up to some time $T$ in the past, plus additional \fixme{parameters} corresponding to the cue familiarity and accessibility accounts.
 
 % what difficulties does this present for cognitive modeling?
-
 \comment{
     mathematical pitfalls
         repeated retrievals will boost activation; 
@@ -431,7 +393,9 @@ Beyond the trend of previous FOK, two other plausible functions may be a weighte
 
 \section{Evaluating Models of Feelings of Knowing}
 
-% 
+% FIXME what does a "high" FOK mean? have been silent thus far on what values FOKs could have
+% Without loss of generality, we further define the FOK to be a real number between -1 and 1; this allows the agent to understand whether an FOK is high or low in an absolute sense, without \fixme[I'm not sure how that would work]{the need for comparison against other FOKs}.
+
 Despite the plethora of plausible sources of FOK, it is difficult to empirically evaluate whether these models reflect how FOK is computed.
 Especially with the possibility of a dynamic FOK that changes with each memory retrieval, there is currently insufficient human data to determine how FOK changes over time.
 It is unclear that FOK should always increase until an answer is found, nor that it should always decrease if the agent eventually gives up.
@@ -439,35 +403,38 @@ For example, one could try a strategy that fails to produce an answer, before sw
 % FIXME need to say more here - to what extent might FOK be co-learned with memory strategies?
 % that is, any particular memory strategy must be matched with an appropriate FOK
 More generally, the interaction between FOK and the other strategic aspects of memory retrieval remains unexplored, leaving a lot of uncertainty as to how FOK changes over time.
+Nonetheless, we propose that there are two main approaches to evaluation: to match against human data, or to show that the computed FOK is empirically useful in a broader cognitive model.
+We discuss each type of evaluation below.
 
 \subsection{Evaluation via Matching Human Data}
+
+The majority of experimental results on FOK fall into one of two categories.
+The first type of experiments measure how different factors affect FOK, and whether it increases or decreases the judgment. % FIXME citation examples?
+The second type of experiments measures the accuracy of FOK and the degree to which it correlates with whether the subject retrieves the correct answer, where the accuracy may also depend on the same factors. % FIXME citation examples?
+One challenge in matching human data is that, with the dynamic view of FOK, it is unclear at which point FOK is measure.
+That is, if four retrievals are needed to answer a question, the FOK will be different after every retrieval regardless of which source is used.
+% FIXME conclusion
+
 % FIXME perhaps what needs to happen here is a table:
 % {cue, target, competition} X {activation, connectivity, other}
 
-% modeling human data
-Nonetheless, we propose that there are two main approaches to evaluation: to match against human data, or to show that the computed FOK is empirically useful in a broader cognitive model.
-% FIXME evaluate whether different manipulations have the same qualitative effect?
-% will need a list of manipulations and their effects (positive and negative)
-% good general summary: Schwartz1994SourcesOfInformation
-
-% experiments that affect activation
-
-% experiments that affect connectivity (mostly by introducing artificial facts)
-% Schwartz2014ContextualInformationInfluences
-% Metcalfe1993TheCueFamiliarity
+A good summary of factors that influence FOK is given in \textcite{Schwartz1994SourcesOfInformation}.
+The factors themselves map well onto either changing the activation of some elements, changing the connectivity of LTM, or some other manipulation.
+For example, the experiments in \textcite{Metcalfe1993TheCueFamiliarity} and \textcite{Schwartz2014ContextualInformationInfluences} both manipulate FOK by varying the amount of information presented.
+Since the information was artificially created by the experimenters, they do not correspond to any existing concepts in LTM; these manipulations therefore change the connectivity of LTM.
+We might therefore expect connectivity-based FOK models of FOK to be affected, and thus can evaluating whether the direction of change matches that in people.
+In contrast, \textcite{Florer2000FeelingsOfKnowing} examine the effects of repeated elements (within an artificial sequence).
+Once the sequence has been encoded as structure in LTM, the repetition would increase the activation of those elements; these manip[ulations therefore change the activation of LTM.
 
 % experiments/factors that affect both activation and connectivity
 % domain familiarity (Schwartz1994SourcesOfInformation)
-
-% other experiments
-% perceived difficulty (Widner1996TheEffectsOf)
 
 \subsection{Evaluation via Functional Demonstration}
 
 % functional evaluation
 The other main approach to evaluating FOK is examine whether it is a valid signal for an agent knowing the answer to a question.
 Unlike matching human data, the focus here is simply on the ``accuracy'' of FOK, as suggested by the cognitive-heuristic account of metamemory.
-% FIXME depends
+% FIXME more AI-like
 
 % looking at how FOKs differ in "performance" under different conditions
 % unclear what "performance" means, if FOK does not monotonically increase or decrease
